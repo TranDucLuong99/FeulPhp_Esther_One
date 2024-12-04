@@ -29,7 +29,7 @@ class Controller_Admin_Post extends Controller_Admin_Base
             $post = new Model_Post([
                 'title' => \Input::post('title'),
                 'content' => \Input::post('content'),
-                'category_id' => 2,
+                'category_id' => \Input::post('category_id'),
                 'status' => 1,
             ]);
             $post->save();
@@ -46,6 +46,41 @@ class Controller_Admin_Post extends Controller_Admin_Base
         ];
         // Render form
         $this->template->content = \View::forge('admin/post/create', $data);
+    }
+
+    public function action_edit($id)
+    {
+        // Lấy bài viết theo ID
+        $post = Model_Post::find($id);
+
+        if (!$post) {
+            // Nếu bài viết không tồn tại, chuyển hướng về danh sách
+            Response::redirect('admin/post');
+        }
+
+        // Lấy tất cả các category để hiển thị trong select box
+        $categories = Model_Category::find('all');
+
+        if (Input::method() == 'POST') {
+            // Nếu form được gửi, lấy dữ liệu từ form và cập nhật bài viết
+            $post->title = Input::post('title');
+            $post->content = Input::post('content');
+            $post->category_id = Input::post('category_id');
+
+            // Lưu lại bài viết
+            $post->save();
+
+            // Chuyển hướng về danh sách bài viết
+            Response::redirect('admin/post');
+        }
+        $data = [
+            'title' => 'Chỉnh sửa bài viết',
+            'post' => $post,
+            'categories' => $categories,
+            'content' => 'Chỉnh sửa bài viết',
+        ];
+        // Truyền bài viết và các category vào view
+        $this->template->content = \View::forge('admin/post/edit', $data);
     }
 
     public function action_delete($id)

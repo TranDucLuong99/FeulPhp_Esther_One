@@ -42,6 +42,7 @@ return array(
 
     'admin/post' => 'admin/post/index',
     'admin/post/create' => 'admin/post/create',
+    'admin/post/edit/(:num)' => 'admin/post/edit/$1',
     'admin/post/delete/(:num)' => 'admin/post/delete/$1',
 
 );

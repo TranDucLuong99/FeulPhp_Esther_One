@@ -3,18 +3,12 @@
 class Model_Category extends \Orm\Model
 {
 	protected static $_properties = array(
-		"id" => array(
-			"label" => "Id",
-			"data_type" => "int",
-		),
-		"created_at" => array(
-			"label" => "Created at",
-			"data_type" => "int",
-		),
-		"updated_at" => array(
-			"label" => "Updated at",
-			"data_type" => "int",
-		),
+        "id",
+        "name",
+        "description",
+        "status",
+        "created_at",
+        "updated_at",
 	);
 
 	protected static $_observers = array(
@@ -34,8 +28,16 @@ class Model_Category extends \Orm\Model
 
 	protected static $_primary_key = array('id');
 
-	protected static $_has_many = array(
-	);
+    // Thiết lập quan hệ 'has_many' với Post
+    protected static $_has_many = array(
+        'posts' => array(
+            'key_from' => 'id',
+            'model_to' => 'Model_Post',
+            'key_to' => 'category_id',
+            'cascade_save' => false,
+            'cascade_delete' => false,
+        ),
+    );
 
 	protected static $_many_many = array(
 	);

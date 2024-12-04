@@ -41,5 +41,7 @@ return array(
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
 
     'admin/post' => 'admin/post/index',
+    'admin/post/create' => 'admin/post/create',
+    'admin/post/delete/(:num)' => 'admin/post/delete/$1',
 
 );

@@ -34,3 +34,100 @@ nav ul li a {
     width: 80%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Chung cho bảng */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Định dạng cho tiêu đề và các ô trong bảng */
+.data-table th, .data-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Định dạng cho tiêu đề bảng */
+.data-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+/* Định dạng cho hàng khi di chuột qua */
+.data-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Liên kết Edit và Delete */
+.data-table a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.data-table a:hover {
+    text-decoration: underline;
+}
+
+/* Định dạng cho nút Edit */
+.edit-btn {
+    color: #4CAF50;
+}
+
+/* Định dạng cho nút Delete */
+.delete-btn {
+    color: #f44336;
+}
+
+/* Định dạng cho các nút khi di chuột */
+.data-table a:hover {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Định dạng cho các dòng chẵn trong bảng */
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Định dạng cho phần body */
+.data-table tbody {
+    font-size: 14px;
+}
+
+/* Tạo hiệu ứng cho các liên kết */
+.edit-btn:hover, .delete-btn:hover {
+    font-weight: bold;
+}
+
+/* Định dạng cho nút */
+.btn {
+    display: inline-block;
+    background-color: #4CAF50; /* Màu nền xanh lá */
+    color: white; /* Màu chữ trắng */
+    padding: 10px 20px; /* Khoảng cách xung quanh chữ */
+    font-size: 16px; /* Cỡ chữ */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 5px; /* Bo góc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ cho nút */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển màu nền và hiệu ứng nhấn */
+}
+
+/* Khi di chuột qua nút */
+.btn:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nâng nút khi hover */
+}
+
+/* Khi nút được nhấn */
+.btn:active {
+    background-color: #388e3c; /* Màu nền khi nhấn */
+    transform: translateY(0); /* Đặt nút về vị trí ban đầu */
+}
+
+

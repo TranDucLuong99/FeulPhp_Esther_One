@@ -2,7 +2,7 @@
 
 namespace Fuel\Migrations;
 
-class Create_categories
+class Add_table_categories
 {
 	public function up()
 	{
@@ -18,6 +18,6 @@ class Create_categories
 
 	public function down()
 	{
-		\DBUtil::drop_table('categories');
+        \DBUtil::drop_table('categories');
 	}
 }

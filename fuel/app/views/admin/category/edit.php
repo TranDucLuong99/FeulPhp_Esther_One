@@ -72,37 +72,26 @@
     .submit-btn:active {
         background-color: #388e3c;
     }
-
 </style>
 
 <div class="container">
-    <h1>Create New Post</h1>
+    <h1>Edit Category</h1>
 
-    <?php echo Form::open(array('action' => 'admin/post/create')); ?>
+    <?php echo Form::open(array('action' => 'admin/category/edit/'.$category->id)); ?>
 
     <div class="form-group">
-        <label for="title">Title</label>
-        <?php echo Form::input('title', '', array('id' => 'title', 'class' => 'input-field', 'placeholder' => 'Enter post title')); ?>
+        <label for="name">Name</label>
+        <?php echo Form::input('name', $category->name, array('id' => 'name', 'class' => 'input-field', 'placeholder' => 'Enter category name')); ?>
     </div>
 
     <div class="form-group">
-        <label for="content">Content</label>
-        <?php echo Form::textarea('content', '', array('id' => 'content', 'class' => 'input-field', 'placeholder' => 'Enter post content')); ?>
+        <label for="description">Content</label>
+        <?php echo Form::textarea('description', $category->description, array('id' => 'description', 'class' => 'input-field', 'placeholder' => 'Enter category description')); ?>
     </div>
 
     <div class="form-group">
-        <label for="category_id">Category</label>
-        <?php
-        // Tạo select box với name là category_id và giá trị là id của category
-        $categories_options = array();
-        foreach ($categories as $category) {
-            $categories_options[$category->id] = $category->name;
-        }
-        echo Form::select('category_id', '', $categories_options, array('id' => 'category_id', 'class' => 'input-field'));
-        ?>
+        <button type="submit" class="submit-btn">Update Category</button>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="submit-btn">Create Post</button>
-    </div>
+    <?php echo Form::close(); ?>
 </div>

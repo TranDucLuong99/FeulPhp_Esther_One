@@ -76,33 +76,21 @@
 </style>
 
 <div class="container">
-    <h1>Create New Post</h1>
+    <h1>Create New Category</h1>
 
-    <?php echo Form::open(array('action' => 'admin/post/create')); ?>
+    <?php echo Form::open(array('action' => 'admin/category/create')); ?>
 
     <div class="form-group">
-        <label for="title">Title</label>
-        <?php echo Form::input('title', '', array('id' => 'title', 'class' => 'input-field', 'placeholder' => 'Enter post title')); ?>
+        <label for="name">Title</label>
+        <?php echo Form::input('name', '', array('id' => 'name', 'class' => 'input-field', 'placeholder' => 'Enter category title')); ?>
     </div>
 
     <div class="form-group">
-        <label for="content">Content</label>
-        <?php echo Form::textarea('content', '', array('id' => 'content', 'class' => 'input-field', 'placeholder' => 'Enter post content')); ?>
+        <label for="description">Description</label>
+        <?php echo Form::textarea('description', '', array('id' => 'description', 'class' => 'input-field', 'placeholder' => 'Enter category description')); ?>
     </div>
 
     <div class="form-group">
-        <label for="category_id">Category</label>
-        <?php
-        // Tạo select box với name là category_id và giá trị là id của category
-        $categories_options = array();
-        foreach ($categories as $category) {
-            $categories_options[$category->id] = $category->name;
-        }
-        echo Form::select('category_id', '', $categories_options, array('id' => 'category_id', 'class' => 'input-field'));
-        ?>
-    </div>
-
-    <div class="form-group">
-        <button type="submit" class="submit-btn">Create Post</button>
+        <button type="submit" class="submit-btn">Create Category</button>
     </div>
 </div>

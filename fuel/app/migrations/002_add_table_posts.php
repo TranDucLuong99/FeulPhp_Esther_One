@@ -2,7 +2,7 @@
 
 namespace Fuel\Migrations;
 
-class Create_posts
+class Add_table_posts
 {
 	public function up()
 	{
@@ -15,13 +15,11 @@ class Create_posts
             'created_at' => ['type' => 'timestamp', 'default' => \DB::expr('CURRENT_TIMESTAMP')],
             'updated_at' => ['type' => 'timestamp', 'default' => \DB::expr('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')],
         ], ['id']); // 'id' là khóa chính
-
-        // Thêm khóa ngoại
 //        \DB::query("ALTER TABLE posts ADD CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE")->execute();
 	}
 
 	public function down()
 	{
-		\DBUtil::drop_table('posts');
+        \DBUtil::drop_table('posts');
 	}
 }

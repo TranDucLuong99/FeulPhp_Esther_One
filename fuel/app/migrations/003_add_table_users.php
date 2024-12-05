@@ -2,7 +2,7 @@
 
 namespace Fuel\Migrations;
 
-class Create_users
+class Add_table_users
 {
 	public function up()
 	{
@@ -18,6 +18,6 @@ class Create_users
 
 	public function down()
 	{
-		\DBUtil::drop_table('users');
+        \DBUtil::drop_table('users');
 	}
 }

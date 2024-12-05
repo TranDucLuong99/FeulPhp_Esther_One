@@ -1,4 +1,4 @@
-<h2>Manage Posts</h2>
+<h2><?php echo $title; ?></h2>
 <a href="/admin/post/create" class="btn">Add New Post</a>
 
 <table class="data-table">

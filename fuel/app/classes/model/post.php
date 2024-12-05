@@ -46,7 +46,7 @@ class Model_Post extends \Orm\Model
             'key_to' => 'id',
             'cascade_save' => false,
             'cascade_delete' => false,
-        ),
+        )
     );
 
 }

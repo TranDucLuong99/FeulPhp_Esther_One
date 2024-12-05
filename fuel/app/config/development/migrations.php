@@ -6,12 +6,11 @@ return array(
     array(
       'default' => 
       array(
-        0 => '001_create_employees',
-        1 => '002_create_locations',
-        2 => '003_create_posts',
-        3 => '004_create_categories',
-        4 => '005_create_users',
-        5 => '006_add_foreign_key_to_posts',
+        0 => '001_add_table_categories',
+        1 => '002_add_table_posts',
+        2 => '003_add_table_users',
+        3 => '004_create_places',
+        4 => '005_add_foreign_key_to_posts',
       ),
     ),
     'module' => 

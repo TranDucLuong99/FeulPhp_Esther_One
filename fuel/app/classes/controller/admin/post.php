@@ -2,7 +2,7 @@
 
 class Controller_Admin_Post extends Controller_Admin_Base
 {
-    public $template = 'admin/template';
+//    public $template = 'admin/template';
 
     public function action_index()
 	{
@@ -12,9 +12,8 @@ class Controller_Admin_Post extends Controller_Admin_Base
         ));
 
         $data = [
-            'title'   => 'Danh sách bài viết',
+            'title'   => 'Manage Posts',
             'posts'   => $posts,
-            'content' => 'Danh sách các bài viết',
         ];
 
         // Render view with posts
@@ -23,8 +22,7 @@ class Controller_Admin_Post extends Controller_Admin_Base
 
     public function action_create()
     {
-        if (\Input::method() === 'POST')
-        {
+        if (\Input::method() === 'POST') {
             // Lưu bài viết vào database
             $post = new Model_Post([
                 'title' => \Input::post('title'),

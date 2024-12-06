@@ -1,0 +1,124 @@
+.sec-content {
+  padding: 3rem 0 15rem; }
+  .sec-content .sec-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 6rem; }
+    .sec-content .sec-title img {
+      margin-bottom: 1rem; }
+    .sec-content .sec-title h1 {
+      font-size: 2.8rem;
+      position: relative;
+      z-index: 1;
+      font-weight: 600; }
+      .sec-content .sec-title h1.line-pink:before {
+        content: "";
+        height: 1.1rem;
+        width: 100%;
+        position: absolute;
+        background: #FFE8F1;
+        left: 0;
+        bottom: 0;
+        z-index: -1; }
+  .sec-content .content {
+    width: 70rem;
+    margin: auto; }
+    .sec-content .content p {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      margin-bottom: 5rem; }
+      .sec-content .content p.mgb20 {
+        margin-bottom: 2rem; }
+      .sec-content .content p.mgb30 {
+        margin-bottom: 3rem; }
+      .sec-content .content p.tar {
+        text-align: right; }
+    .sec-content .content ol {
+      margin-bottom: 5rem; }
+      .sec-content .content ol li {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        list-style-type: decimal;
+        list-style-position: inside;
+        text-indent: -2rem;
+        padding-left: 2rem; }
+        .sec-content .content ol li:not(:last-child) {
+          margin-bottom: 1rem; }
+        .sec-content .content ol li.mgb20 {
+          margin-bottom: 2rem; }
+    .sec-content .content hr {
+      border-color: #DCDCDC;
+      margin-bottom: 4rem;
+      margin-top: 4rem; }
+    .sec-content .content .heading-3 {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: #F76B9F;
+      margin-bottom: 1.5rem;
+      font-weight: 600; }
+
+@media screen and (max-width: 450px) {
+  .sec-content {
+    padding: 3rem 0 15rem; }
+    .sec-content .sec-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+      .sec-content .sec-title img {
+        margin-bottom: 1rem;
+        width: 15rem; }
+      .sec-content .sec-title h1 {
+        font-size: 2rem;
+        position: relative;
+        z-index: 1;
+        letter-spacing: 0.1rem; }
+        .sec-content .sec-title h1.line-pink:before {
+          content: "";
+          height: .8rem;
+          width: 100%;
+          position: absolute;
+          background: #FFE8F1;
+          left: 0;
+          bottom: 0;
+          z-index: -1; }
+    .sec-content .content {
+      width: 100%;
+      margin: auto;
+      padding: 0 2rem; }
+      .sec-content .content p {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        margin-bottom: 5rem; }
+        .sec-content .content p.mgb20 {
+          margin-bottom: 2rem; }
+        .sec-content .content p.mgb30 {
+          margin-bottom: 3rem; }
+        .sec-content .content p.tar {
+          text-align: right; }
+      .sec-content .content ol {
+        margin-bottom: 5rem; }
+        .sec-content .content ol li {
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          list-style-type: decimal;
+          list-style-position: inside;
+          text-indent: -2rem;
+          padding-left: 2rem; }
+          .sec-content .content ol li:not(:last-child) {
+            margin-bottom: 1rem; }
+          .sec-content .content ol li.mgb20 {
+            margin-bottom: 2rem; }
+      .sec-content .content hr {
+        border-color: #DCDCDC;
+        margin-bottom: 3rem;
+        margin-top: 3rem; }
+      .sec-content .content .heading-3 {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        color: #F76B9F;
+        margin-bottom: 1.5rem; } }
+
+/*# sourceMappingURL=privacy_policy.css.map */

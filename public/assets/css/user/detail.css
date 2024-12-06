@@ -1,0 +1,518 @@
+.sec-job-detail {
+  padding: 3rem 0 12rem;
+  background: #fcf4f8; }
+  .sec-job-detail .box-white {
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding-bottom: 8rem; }
+    .sec-job-detail .box-white .job-title {
+      background: #f9a1c4;
+      border-radius: 1rem 1rem 0 0;
+      padding: 2rem 5rem;
+      font-size: 2.3rem;
+      line-height: 3.4rem;
+      color: #ffffff;
+      margin-bottom: 3rem;
+      font-weight: 600; }
+    .sec-job-detail .box-white .content {
+      width: 70rem;
+      margin: auto; }
+      .sec-job-detail .box-white .content .store-name {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600; }
+      .sec-job-detail .box-white .content .des {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 1.2rem; }
+      .sec-job-detail .box-white .content .job-img {
+        margin-bottom: 6rem; }
+      .sec-job-detail .box-white .content h2 {
+        font-size: 2.2rem;
+        line-height: 3rem;
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 3.7rem;
+        font-weight: 600; }
+        .sec-job-detail .box-white .content h2:before {
+          content: "";
+          width: 0.6rem;
+          height: 2.4rem;
+          background: #faacc8;
+          border-radius: 0.3rem;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%); }
+        .sec-job-detail .box-white .content h2:after {
+          content: "";
+          width: 100%;
+          height: 0.3rem;
+          background: transparent linear-gradient(90deg, #fbc2d7 0%, #fcdabf 100%) 0% 0% no-repeat padding-box;
+          position: absolute;
+          bottom: -0.8rem;
+          left: 0; }
+      .sec-job-detail .box-white .content p {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        margin-bottom: 3rem; }
+      .sec-job-detail .box-white .content .price-box {
+        background: #fef9ea;
+        border-radius: 0.5rem;
+        padding: 1.2rem 2rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 7rem; }
+        .sec-job-detail .box-white .content .price-box .tit {
+          width: 17rem;
+          height: 4rem;
+          background-image: url("/assets/img/user/detail/price_tit_bg.png");
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          font-weight: 600;
+          margin-right: 2rem;
+          font-size: 1.6rem;
+          line-height: 1; }
+        .sec-job-detail .box-white .content .price-box .bold {
+          font-weight: 600; }
+        .sec-job-detail .box-white .content .price-box .fs18 {
+          font-size: 1.8rem;
+          display: inline-block;
+          transform: translateY(-0.5rem); }
+        .sec-job-detail .box-white .content .price-box .fs20 {
+          font-size: 2rem; }
+        .sec-job-detail .box-white .content .price-box .fs30 {
+          font-size: 3rem; }
+        .sec-job-detail .box-white .content .price-box .txt-pink {
+          color: #f76b9f; }
+        .sec-job-detail .box-white .content .price-box .mr10 {
+          margin-right: 1rem; }
+      .sec-job-detail .box-white .content .description-list {
+        margin-bottom: 7rem; }
+        .sec-job-detail .box-white .content .description-list .item {
+          margin-bottom: 2.5rem; }
+          .sec-job-detail .box-white .content .description-list .item .item-tit {
+            display: flex;
+            align-items: center;
+            color: #f76b9f;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600; }
+            .sec-job-detail .box-white .content .description-list .item .item-tit img {
+              margin-right: 0.8rem; }
+          .sec-job-detail .box-white .content .description-list .item .item-content {
+            background: #fff9fc;
+            border-radius: 0 0.5rem 0.5rem 0;
+            padding: 2rem 3rem;
+            border-left: 0.2rem solid #ffd6e6;
+            width: calc(100% - 1.2rem);
+            margin-left: auto;
+            font-size: 1.6rem;
+            line-height: 2.4rem; }
+            .sec-job-detail .box-white .content .description-list .item .item-content ul {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 1rem; }
+              .sec-job-detail .box-white .content .description-list .item .item-content ul li {
+                padding: 0.6rem 1.2rem;
+                border: 0.1rem solid #b8e8e6;
+                border-radius: 1.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+                background: #ffffff; }
+              .sec-job-detail .box-white .content .description-list .item .item-content ul + span {
+                margin-top: 1.5rem;
+                display: block; }
+      .sec-job-detail .box-white .content .info-list .row {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+        border-bottom: 0.1rem solid #e6e6e6; }
+        .sec-job-detail .box-white .content .info-list .row:first-child {
+          padding-top: 0; }
+        .sec-job-detail .box-white .content .info-list .row:last-child {
+          border-bottom: 0;
+          padding-bottom: 0; }
+        .sec-job-detail .box-white .content .info-list .row .tit {
+          width: 9rem;
+          color: #f76b9f;
+          font-size: 1.6rem;
+          font-weight: 600; }
+        .sec-job-detail .box-white .content .info-list .row .info {
+          width: calc(100% - 9rem);
+          font-size: 1.6rem; }
+
+.sec-search-jobs-by-area {
+  padding: 10rem 0 12rem;
+  background-image: repeating-linear-gradient(90deg, #fff, #fff 0.4rem, #fef7f9 0.3rem, #fef7f9 0.7rem); }
+  .sec-search-jobs-by-area .sec-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4rem; }
+    .sec-search-jobs-by-area .sec-title img {
+      margin-bottom: 1rem; }
+    .sec-search-jobs-by-area .sec-title h2 {
+      font-size: 2.8rem;
+      position: relative;
+      z-index: 1; }
+      .sec-search-jobs-by-area .sec-title h2.line-pink:before {
+        content: "";
+        height: 1.1rem;
+        width: 100%;
+        position: absolute;
+        background: #ffe8f1;
+        left: 0;
+        bottom: 0;
+        z-index: -1; }
+  .sec-search-jobs-by-area .white-box {
+    padding: 6rem 6rem;
+    background: #ffffff; }
+    .sec-search-jobs-by-area .white-box .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      align-items: center; }
+      .sec-search-jobs-by-area .white-box .row .area {
+        display: flex;
+        align-items: center;
+        width: 15rem;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-weight: 600;
+        margin-right: 1.8rem; }
+        .sec-search-jobs-by-area .white-box .row .area img {
+          margin-right: 0.8rem; }
+      .sec-search-jobs-by-area .white-box .row .list-city {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap; }
+        .sec-search-jobs-by-area .white-box .row .list-city li {
+          padding: 0 1.4rem;
+          border-right: 0.1rem solid #fcd1e1; }
+          .sec-search-jobs-by-area .white-box .row .list-city li a {
+            font-size: 1.7rem;
+            line-height: 2.1rem; }
+          .sec-search-jobs-by-area .white-box .row .list-city li:last-child {
+            border-right: none; }
+      .sec-search-jobs-by-area .white-box .row:last-child {
+        margin-bottom: 0; }
+
+@media screen and (max-width: 450px) {
+  .sec-job-detail {
+    padding: 3rem 0 10rem;
+    background: #ffffff; }
+    .sec-job-detail .box-white {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 2rem; }
+      .sec-job-detail .box-white .job-title {
+        background: #ffffff;
+        border-radius: 0;
+        padding: 0;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        color: #f76b9f;
+        margin-bottom: 2rem;
+        font-weight: 600; }
+      .sec-job-detail .box-white .content {
+        width: 100%;
+        margin: auto; }
+        .sec-job-detail .box-white .content .store-name {
+          font-size: 2.2rem;
+          line-height: 3rem;
+          margin-bottom: 0.5rem; }
+        .sec-job-detail .box-white .content .des {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          margin-bottom: 1rem; }
+        .sec-job-detail .box-white .content .job-img {
+          margin-bottom: 5rem; }
+        .sec-job-detail .box-white .content h2 {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          position: relative;
+          padding-left: 1.4rem;
+          margin-bottom: 2.7rem; }
+          .sec-job-detail .box-white .content h2:before {
+            content: "";
+            width: 0.5rem;
+            height: 2rem;
+            background: #faacc8;
+            border-radius: 0.3rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%); }
+          .sec-job-detail .box-white .content h2:after {
+            content: "";
+            width: 100%;
+            height: 0.2rem;
+            background: transparent linear-gradient(90deg, #fbc2d7 0%, #fcdabf 100%) 0% 0% no-repeat padding-box;
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0; }
+        .sec-job-detail .box-white .content p {
+          font-size: 1.4rem;
+          line-height: 2.6rem;
+          margin-bottom: 3rem; }
+        .sec-job-detail .box-white .content .price-box {
+          background: #fef9ea;
+          border-radius: 0.5rem;
+          padding: 1rem 1.1rem 1rem 1.4rem;
+          display: flex;
+          align-items: center;
+          margin-bottom: 2.1rem; }
+          .sec-job-detail .box-white .content .price-box .tit {
+            width: 9.7rem;
+            height: 2.8rem;
+            background-image: url("/assets/img/user/detail/price_tit_bg_SP.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 600;
+            margin-right: 1rem;
+            font-size: 1.1rem; }
+          .sec-job-detail .box-white .content .price-box .bold {
+            font-weight: 600; }
+          .sec-job-detail .box-white .content .price-box .fs18 {
+            font-size: 1.2rem;
+            display: inline-block;
+            transform: translateY(-0.25rem); }
+          .sec-job-detail .box-white .content .price-box .fs20 {
+            font-size: 1.4rem; }
+          .sec-job-detail .box-white .content .price-box .fs30 {
+            font-size: 2rem; }
+          .sec-job-detail .box-white .content .price-box .txt-pink {
+            color: #f76b9f; }
+          .sec-job-detail .box-white .content .price-box .mr10 {
+            margin-right: 0.2rem; }
+        .sec-job-detail .box-white .content .description-list {
+          margin-bottom: 7rem; }
+          .sec-job-detail .box-white .content .description-list .item {
+            margin-bottom: 2.5rem; }
+            .sec-job-detail .box-white .content .description-list .item .item-tit {
+              display: flex;
+              align-items: center;
+              color: #f76b9f;
+              font-size: 1.6rem;
+              line-height: 2.1rem;
+              margin-bottom: 0.6rem;
+              font-weight: 600; }
+              .sec-job-detail .box-white .content .description-list .item .item-tit img {
+                margin-right: 0.8rem;
+                width: 2.2rem; }
+            .sec-job-detail .box-white .content .description-list .item .item-content {
+              background: #fff9fc;
+              border-radius: 0 0.5rem 0.5rem 0;
+              padding: 1.5rem;
+              border-left: 0.2rem solid #ffd6e6;
+              width: calc(100% - 1rem);
+              margin-left: auto;
+              font-size: 1.4rem;
+              line-height: 2.2rem; }
+              .sec-job-detail .box-white .content .description-list .item .item-content ul {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem; }
+                .sec-job-detail .box-white .content .description-list .item .item-content ul li {
+                  padding: 0.6rem 1rem;
+                  border: 0.1rem solid #b8e8e6;
+                  border-radius: 1.8rem;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.2rem;
+                  line-height: 1.5rem;
+                  background: #ffffff; }
+                .sec-job-detail .box-white .content .description-list .item .item-content ul + span {
+                  margin-top: 1.5rem;
+                  display: block; }
+        .sec-job-detail .box-white .content .info-list .row {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          border-bottom: none;
+          flex-wrap: wrap;
+          margin-bottom: 2.5rem; }
+          .sec-job-detail .box-white .content .info-list .row:first-child {
+            padding-top: 0; }
+          .sec-job-detail .box-white .content .info-list .row:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0; }
+          .sec-job-detail .box-white .content .info-list .row .tit {
+            width: 100%;
+            color: #f76b9f;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-bottom: 0.1rem solid #e6e6e6;
+            padding-bottom: 0.6rem; }
+          .sec-job-detail .box-white .content .info-list .row .info {
+            width: 100%;
+            font-size: 1.4rem;
+            padding-top: 0.6rem; }
+    .sec-job-detail:after {
+      content: "";
+      width: 100%;
+      height: 10rem;
+      background: transparent linear-gradient(0deg, #ffeff4 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+      opacity: 0.6;
+      position: absolute;
+      display: block; }
+
+  .sec-search-jobs-by-area {
+    padding: 3.9rem 0 9rem;
+    background-image: url("/assets/img/user/top/stripe_background_SP.svg");
+    background-position: center; }
+    .sec-search-jobs-by-area .sec-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 4rem; }
+      .sec-search-jobs-by-area .sec-title img {
+        margin-bottom: 1rem;
+        width: 6rem; }
+      .sec-search-jobs-by-area .sec-title h2 {
+        font-size: 2rem;
+        position: relative;
+        z-index: 1; }
+        .sec-search-jobs-by-area .sec-title h2.line-pink:before {
+          content: "";
+          height: 1.1rem;
+          width: 100%;
+          position: absolute;
+          background: #ffe8f1;
+          left: 0;
+          bottom: 0;
+          z-index: -1; }
+    .sec-search-jobs-by-area .white-box-sp {
+      padding: 0 1.3rem; }
+      .sec-search-jobs-by-area .white-box-sp .accordion-box {
+        background: #ffffff;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-bottom: 1rem; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.kanto {
+          border: 0.3rem solid #fce1d5; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.kansai {
+          border: 0.3rem solid #d9e7f0; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.tokai {
+          border: 0.3rem solid #f5d7de; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.kyushu-okinawa {
+          border: 0.3rem solid #faeac9; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.hokkaido-tohoku {
+          border: 0.3rem solid #d0f0ed; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.northern-kanto {
+          border: 0.3rem solid #d0ebd5; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.hokuriku-koshinetsu {
+          border: 0.3rem solid #f8d3e7; }
+        .sec-search-jobs-by-area .white-box-sp .accordion-box.chugoku-shikoku {
+          border: 0.3rem solid #e7dcf0; }
+      .sec-search-jobs-by-area .white-box-sp .accordion {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.6rem;
+        line-height: 1;
+        transition: 0.4s;
+        position: relative;
+        font-weight: 600;
+        display: flex;
+        padding: 1.2rem 2rem;
+        align-items: center;
+        height: 4.4rem; }
+      .sec-search-jobs-by-area .white-box-sp .active {
+        background-color: #ffffff; }
+      .sec-search-jobs-by-area .white-box-sp .accordion:after {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 2rem;
+        position: absolute;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: 100%; }
+      .sec-search-jobs-by-area .white-box-sp .accordion[slot="0"]:after {
+        background-image: url("/assets/img/user/top/ico_plus_gray.svg"); }
+      .sec-search-jobs-by-area .white-box-sp .accordion[slot="1"]:after {
+        background-image: url("/assets/img/user/top/ico_plus.svg"); }
+      .sec-search-jobs-by-area .white-box-sp .active:after {
+        content: "";
+        background-image: url("/assets/img/user/top/ico_hyphen.svg"); }
+      .sec-search-jobs-by-area .white-box-sp .panel {
+        padding: 0 2rem;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        font-size: 1.4rem;
+        line-height: 2.3rem; }
+        .sec-search-jobs-by-area .white-box-sp .panel ul {
+          margin-bottom: 6px; }
+          .sec-search-jobs-by-area .white-box-sp .panel ul li {
+            border-top: 0.1rem solid #e6e6e6; }
+            .sec-search-jobs-by-area .white-box-sp .panel ul li a {
+              padding: 1.2rem 2rem 1.2rem 1.5rem;
+              display: flex;
+              position: relative;
+              font-weight: 600;
+              line-height: 1;
+              height: 41px;
+              align-items: center; }
+              .sec-search-jobs-by-area .white-box-sp .panel ul li a:after {
+                content: "";
+                width: 2rem;
+                height: 2rem;
+                background: url("/assets/img/user/top/ico_arrow-right-pink.svg") no-repeat fixed;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: 0;
+                position: absolute;
+                display: inline-block;
+                z-index: 1; }
+            .sec-search-jobs-by-area .white-box-sp .panel ul li span {
+              padding: 1.2rem 2rem 1.2rem 1.5rem;
+              display: flex;
+              position: relative;
+              color: #dcdcdc;
+              font-weight: 600;
+              line-height: 1;
+              height: 41px;
+              align-items: center; }
+              .sec-search-jobs-by-area .white-box-sp .panel ul li span:after {
+                content: "";
+                width: 2rem;
+                height: 2rem;
+                background: url("/assets/img/user/top/ico_arrow-right-gray.svg") no-repeat fixed;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: 0;
+                position: absolute;
+                display: inline-block;
+                z-index: 1; } }
+
+/*# sourceMappingURL=detail.css.map */

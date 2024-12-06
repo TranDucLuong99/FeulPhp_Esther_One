@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_428851" data-name="長方形 428851" width="28" height="28" transform="translate(1447 2780)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="マスクグループ_1110916" data-name="マスクグループ 1110916" transform="translate(-1447 -2780)" clip-path="url(#clip-path)">
+    <g id="アートワーク_90" data-name="アートワーク 90" transform="translate(1460.853 2793.853)">
+      <g id="グループ_1110924" data-name="グループ 1110924" transform="translate(-13 -13)">
+        <rect id="長方形_428332" data-name="長方形 428332" width="26" height="26" transform="translate(0.147 0.147)" fill="none"/>
+        <g id="グループ_1110923" data-name="グループ 1110923" transform="translate(3.766 1.486)">
+          <g id="グループ_1110921" data-name="グループ 1110921" transform="translate(0 16.217)">
+            <path id="パス_1149879" data-name="パス 1149879" d="M34.5,81.739H20.435a.953.953,0,1,1,0-1.9H34.5a.953.953,0,1,1,0,1.9Z" transform="translate(-18.089 -76.548)" fill="#fbc9dd"/>
+            <g id="グループ_1110920" data-name="グループ 1110920">
+              <path id="パス_1149880" data-name="パス 1149880" d="M15.274,73.519a.952.952,0,0,1-.693-1.6l4.025-4.287a.951.951,0,0,1,1.387,1.3l-4.025,4.287A.948.948,0,0,1,15.274,73.519Z" transform="translate(-14.322 -67.33)" fill="#fbc9dd"/>
+              <path id="パス_1149881" data-name="パス 1149881" d="M68.108,73.519a.948.948,0,0,1-.694-.3l-4.025-4.287a.951.951,0,0,1,1.387-1.3L68.8,71.917a.952.952,0,0,1-.693,1.6Z" transform="translate(-50.298 -67.33)" fill="#fbc9dd"/>
+            </g>
+          </g>
+          <g id="グループ_1110922" data-name="グループ 1110922" transform="translate(0.763)">
+            <path id="パス_1149882" data-name="パス 1149882" d="M34.457,21.189V10a2.49,2.49,0,0,0-1.089-2.1,13.721,13.721,0,0,0-15.051,0A2.49,2.49,0,0,0,17.228,10V21.186a2.37,2.37,0,0,0,2.233,2.487H32.076l-.012,0h.16A2.37,2.37,0,0,0,34.457,21.189ZM19.391,11.2a.57.57,0,0,1,.57-.57H31.726a.57.57,0,0,1,.571.569h0v3.934a.571.571,0,0,1-.571.571H19.959a.571.571,0,0,1-.571-.571Zm1.034,9.638a1.4,1.4,0,1,1,1.4-1.4A1.4,1.4,0,0,1,20.425,20.841Zm10.836,0a1.4,1.4,0,1,1,1.4-1.4A1.4,1.4,0,0,1,31.261,20.841Z" transform="translate(-17.225 -5.653)" fill="#fbc9dd"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

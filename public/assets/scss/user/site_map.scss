@@ -1,0 +1,291 @@
+.sec-site-map {
+	padding: 3rem 0 15rem;
+	.sec-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin-bottom: 6rem;
+		img {
+			margin-bottom: 1rem;
+		}
+		h1 {
+			font-size: 2.8rem;
+			position: relative;
+			z-index: 1;
+			font-weight: 600;
+            &.line-pink {
+                &:before {
+                    content: "";
+                    height: 1.1rem;
+                    width: 100%;
+                    position: absolute;
+                    background: #FFE8F1;
+                    left: 0;
+                    bottom: 0;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    .sec-sub-title {
+        display: flex;
+        align-items: center;
+        font-size: 2.2rem;
+        line-height: 2.9rem;
+        padding-bottom: 1.6rem;
+        border-bottom: .2rem solid #FCD1E1;
+        font-weight: 600;
+        margin-bottom: 3.6rem;
+        img {
+            margin-right: 1rem;
+        }
+    }
+    .list-map {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 8rem;
+        row-gap: 4rem;
+        li {
+            width: calc((100% - 8rem)/2);
+			.heading-4 {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.2rem;
+				font-weight: 600;
+				img {
+					margin-right: 0.8rem;
+				}
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				column-gap: 2.5rem;
+				row-gap: 1rem;
+				width: 100%;
+				li {
+					width: calc((100% - 2.5rem) / 2);
+					a {
+						display: flex;
+						font-size: 1.4rem;
+						line-height: 1.9rem;
+					}
+					span {
+						display: flex;
+						font-size: 1.4rem;
+						line-height: 1.9rem;
+						color: #dcdcdc;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.sec-site-map {
+		padding: 3rem 0 15rem;
+
+		.sec-title {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			img {
+				margin-bottom: 1rem;
+				width: 15rem;
+			}
+			h1 {
+				font-size: 2rem;
+				position: relative;
+				z-index: 1;
+				letter-spacing: 0.1rem;
+				&.line-pink {
+					&:before {
+						content: "";
+						height: 0.8rem;
+						width: 100%;
+						position: absolute;
+						background: #ffe8f1;
+						left: 0;
+						bottom: 0;
+						z-index: -1;
+					}
+				}
+			}
+		}
+
+		.sec-sub-title {
+			display: flex;
+			align-items: center;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+			padding-bottom: 0;
+			border-bottom: none;
+			margin-bottom: 1rem;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			font-weight: 600;
+
+            img {
+                margin-right: 1rem;
+				height: 2rem;
+				width: auto;
+            }
+        }
+    }
+    .white-box-sp {
+        padding: 0 1.3rem;
+        .accordion-box {
+            background: #FFFFFF;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            &.kanto {
+                border: .3rem solid #FCE1D5;
+            }
+            &.kansai {
+                border: .3rem solid #D9E7F0;
+            }
+            &.tokai {
+                border: .3rem solid #F5D7DE;
+            }
+            &.kyushu-okinawa, &.kyusyu-okinawa {
+                border: .3rem solid #FAEAC9;
+            }
+            &.hokkaido-tohoku {
+                border: .3rem solid #D0F0ED;
+            }
+            &.northern-kanto, &.kitakanto {
+                border: .3rem solid #D0EBD5;
+            }
+            &.hokuriku-koshinetsu {
+                border: .3rem solid #F8D3E7;
+            }
+            &.chugoku-shikoku {
+                border: .3rem solid #E7DCF0;
+            }
+            &[slot="0"] {
+                border: 0.3rem solid #DCDCDC !important;
+                button {
+                    color: #DCDCDC !important;
+                    pointer-events: none;
+                }
+            }
+        }
+        .accordion {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.6rem;
+            line-height: 1;
+            transition: 0.4s;
+            position: relative;
+            font-weight: 600;
+            display: flex;
+			padding: 1.2rem 2rem;
+			align-items: center;
+			height: 4.4rem;
+        }
+
+		.active {
+			background-color: #ffffff;
+		}
+
+		.accordion:after {
+			content: "";
+			width: 2rem;
+			height: 2rem;
+			top: 50%;
+			transform: translate(0, -50%);
+			right: 2rem;
+			position: absolute;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+
+		.accordion[slot="0"]:after {
+			background-image: url("/assets/img/user/top/ico_plus_gray.svg");
+		}
+
+		.accordion[slot="1"]:after {
+			background-image: url("/assets/img/user/top/ico_plus.svg");
+		}
+
+		.active:after {
+			content: "";
+			background-image: url("/assets/img/user/top/ico_hyphen.svg");
+		}
+		.accordion[slot="1"] {
+			&.active:after {
+				content: "";
+				background-image: url("/assets/img/user/top/ico_hyphen.svg");
+			}
+		}
+
+		.panel {
+			padding: 0 2rem;
+			background-color: white;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			font-size: 1.4rem;
+			line-height: 2.3rem;
+
+            ul {
+				margin-bottom: 6px;
+                li{
+                    border-top: .1rem solid #E6E6E6;
+                    a {
+                        padding: 1.2rem 2rem 1.2rem 1.5rem;
+                        display: flex;
+                        position: relative;
+                        font-weight: 600;
+						line-height: 1;
+						height: 41px;
+						align-items: center;
+                        &:after{
+                            content: "";
+                            width: 2rem;
+                            height: 2rem;
+                            background: url("/assets/img/user/top/ico_arrow-right-pink.svg") no-repeat fixed;
+                            top: 50%;
+                            transform: translate(0,-50%);
+                            right: 0;
+                            position: absolute;
+                            display: inline-block;
+                            z-index: 1;
+                        }
+                    }
+                    span {
+                        padding: 1.2rem 2rem 1.2rem 1.5rem;
+                        display: flex;
+                        position: relative;
+                        color: #DCDCDC;
+						font-weight: 600;
+						line-height: 1;
+						height: 41px;
+						align-items: center;
+                        &:after{
+                            content: "";
+                            width: 2rem;
+                            height: 2rem;
+                            background: url("/assets/img/user/top/ico_arrow-right-gray.svg") no-repeat fixed;
+                            top: 50%;
+                            transform: translate(0,-50%);
+                            right: 0;
+                            position: absolute;
+                            display: inline-block;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -51,6 +51,7 @@
         </picture>
     </div>
 </header>
+
 <div class="main">
     <section class="sec-search-area">
         <div class="inner-860">
@@ -703,6 +704,7 @@
             </div>		</div>
     </section>
 </div>
+
 <footer>
     <div class="footer-icon-pc-mv">
         <picture>

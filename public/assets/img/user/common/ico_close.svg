@@ -1,0 +1,15 @@
+<svg id="icon_閉じる" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_426577" data-name="長方形 426577" width="30" height="30" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="マスクグループ_892184" data-name="マスクグループ 892184" clip-path="url(#clip-path)">
+    <g id="グループ_1108006" data-name="グループ 1108006" transform="translate(1.198 1.198)">
+      <path id="線_11" data-name="線 11" d="M32.9,4.091H2.045A2.045,2.045,0,0,1,2.045,0H32.9a2.045,2.045,0,0,1,0,4.091Z" transform="translate(27.604 2.893) rotate(135)" fill="#fff"/>
+      <path id="線_12" data-name="線 12" d="M32.9,4.091H2.045A2.045,2.045,0,0,1,2.045,0H32.9a2.045,2.045,0,0,1,0,4.091Z" transform="translate(24.711 27.604) rotate(-135)" fill="#fff"/>
+      <path id="線_11-2" data-name="線 11" d="M32.9,4.091H2.045A2.045,2.045,0,0,1,2.045,0H32.9a2.045,2.045,0,0,1,0,4.091Z" transform="translate(27.604 2.893) rotate(135)" fill="#fff"/>
+      <path id="線_12-2" data-name="線 12" d="M32.9,4.091H2.045A2.045,2.045,0,0,1,2.045,0H32.9a2.045,2.045,0,0,1,0,4.091Z" transform="translate(24.711 27.604) rotate(-135)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

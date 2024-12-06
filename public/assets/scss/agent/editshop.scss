@@ -1,0 +1,110 @@
+#content {
+	background-color: #e0e0e0;
+	min-height: 100vh;
+	.container {
+		max-width: 86rem;
+		width: 100%;
+		margin: auto;
+		padding: 2rem;
+
+		table {
+			width: 100%;
+			background: #ffffff;
+			border: 0.1rem solid;
+			border-spacing: 0;
+
+			th,
+			td {
+				border: 0.1rem solid;
+				padding: 0.2rem;
+			}
+
+			.label {
+				width: 20%;
+
+				.required {
+					color: red;
+					display: inline;
+				}
+
+				.no_required {
+					display: none;
+				}
+			}
+
+			.field {
+				width: 80%;
+
+				input[type="text"] {
+					width: 100%;
+					box-sizing: border-box;
+				}
+
+				.field-radio {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+
+					label {
+						margin-right: 2rem;
+					}
+				}
+
+				textarea {
+					width: 100%;
+					box-sizing: border-box;
+					line-height: 1.5;
+				}
+				.job-img {
+					width: 80%;
+					height: auto;
+				}
+
+				&.field-edit {
+					font-size: 16px;
+					color: red;
+					border-color: #000;
+				}
+
+				.character_info {
+					display: flex;
+					justify-content: space-between;
+					padding-top: 0.5rem;
+				}
+			}
+
+			.error_comment {
+				font-size: 16px;
+				color: red;
+			}
+
+			.active_yes {
+				background: #fff8dc;
+			}
+
+			.active_no {
+				background: #ffb6c1;
+			}
+
+			.background_error {
+				background-color: #ff9bcd;
+			}
+		}
+
+		.form-btn-area {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 3rem;
+
+			input {
+				border-radius: 0.5rem;
+				padding: 0.5rem 3rem;
+				margin-bottom: 1rem;
+
+				&:first-child {
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+}

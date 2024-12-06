@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="8" viewBox="0 0 8 8">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_426450" data-name="長方形 426450" width="8" height="8" transform="translate(4428 -24)" fill="#c9c9c9" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="マスクグループ_892180" data-name="マスクグループ 892180" transform="translate(-4428 24)" clip-path="url(#clip-path)">
+    <path id="Icon_ion-ios-arrow-forward" data-name="Icon ion-ios-arrow-forward" d="M14.739,10.195,11.43,7.17a.536.536,0,0,1,0-.807.673.673,0,0,1,.885,0L16.064,9.79a.536.536,0,0,1,.018.788L12.318,14.03a.671.671,0,0,1-.885,0,.536.536,0,0,1,0-.807Z" transform="translate(4418.253 -30.196)" fill="#c9c9c9"/>
+  </g>
+</svg>

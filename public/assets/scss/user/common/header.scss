@@ -1,0 +1,328 @@
+header {
+    position: relative;
+    h1 {
+        margin: 0;
+        color: #FFFFFF;
+        background: #FAACC8;
+        text-align: center;
+        line-height: 3.2rem;
+        font-size: 1.4rem;
+        font-weight: normal;
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+    .banner-img {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+    }
+    .icon-pc-mv {
+        position: absolute;
+        left: calc((100% - 79.5rem)/2);
+        bottom: -4rem;
+    }
+
+    &.header-page {
+        background-image: url("/assets/img/user/common/header-bg.png");
+        background-repeat: no-repeat;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top:0; left:0;
+        width: 100%;
+        z-index: 3;
+        .flex-between{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            .prefecture-name {
+                font-size: 1.4rem;
+                line-height: 1;
+                height: 2.8rem;
+                padding: 0 2.8rem;
+                display: flex;
+                align-items: center;
+                background: #FFFFFF;
+                border-radius: 1.8rem;
+                color: #F76B9F;
+				font-weight: 600;
+            }
+        }
+        .btn-box {
+			&:before {
+				position: absolute;
+				width:0;
+				height:0;
+				visibility:hidden;
+				content: url("/assets/img/user/common/icon_search_hover.svg");
+			}
+            position: relative;
+            cursor: pointer;
+            .icon-search {
+                background-image: url("/assets/img/user/common/icon_search.svg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: 5rem;
+                height: 5.8rem;
+                display: block;
+                position: absolute;
+                left: -4.3rem;
+                z-index: 1;
+                &:hover {
+                    background-image: url("/assets/img/user/common/icon_search_hover.svg");
+                }
+				&:after {
+					content: '';
+					position: absolute;
+					left: 4.3rem;
+					top: 0;
+					width: 5rem;
+					height: 5rem;
+					background: #ffdde4;
+					border: 0.4rem solid #ffdde4;
+					border-radius: 1rem;
+				}
+            }
+            .btn-change-area{
+                width: 25rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FFFFFF;
+                font-size: 1.8rem;
+                background: #FF88B3;
+                border: 0.4rem solid rgb(254, 150, 185);
+                border-radius: 1rem;
+                position: relative;
+                z-index: 2;
+                overflow: hidden;
+				font-weight: 600;
+                opacity: 1 !important;
+                img {
+                    margin-right: 0.6rem;
+                }
+            }
+            &:hover {
+				.btn-change-area{
+					opacity: 0.8;
+				}
+                .icon-search {
+                    background-image: url("/assets/img/user/common/icon_search_hover.svg");
+					opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.breadcrumbs {
+    background: #FFFFFF;
+    .inner-860 {
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        height: 2.8rem;
+        gap: 1.8rem;
+        li {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            position: relative;
+            &:after{
+                content: "";
+                width: 0.8rem;
+                height: 0.8rem;
+                background-image: url("/assets/img/user/common/ico_arrow_r_gray.svg");
+                background-repeat: no-repeat;
+                top: 50%;
+                transform: translate(0,-50%);
+                right: -1.4rem;
+                position: absolute;
+                display: inline-block;
+            }
+            &:last-child {
+                color: #FF88B3;
+            }
+            &:last-child:after {
+                display: none;
+            }
+            a, span {
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 450px) {
+    header {
+        h1 {
+            line-height: 2.3rem;
+            font-size: 1.1rem;
+        }
+        .banner-img {
+            object-fit: cover;
+            height: auto;
+            width: 100%;
+        }
+        .icon-pc-mv {
+            position: absolute;
+            left: 0;
+            bottom: -4rem;
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &.header-page {
+            background-image: url("/assets/img/user/common/header-bg-SP.png");
+            background-repeat: no-repeat;
+            height: 6.4rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            .flex-between{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo-box {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 14rem;
+                .prefecture-name {
+                    font-size: 1rem;
+                    line-height: 1;
+                    height: 1.6rem;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #FFFFFF;
+                    border-radius: 1.8rem;
+                    color: #F76B9F;
+                    width: 100%;
+                    margin-top: 0.4rem;
+					font-weight: 600;
+                }
+            }
+            .logo-box-2 {
+                width: 21.7rem;
+            }
+            .btn-box {
+                position: relative;
+                cursor: pointer;
+                .icon-search {
+                    background-image: url("/assets/img/user/common/icon_search_SP.svg");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    width: 3.6rem;
+                    height: 4.6rem;
+                    display: block;
+                    position: absolute;
+                    left: -3rem;
+                    z-index: 1;
+                    &:hover {
+                        background-image: url("/assets/img/user/common/icon_search_SP.svg");
+                    }
+					&::after {
+						display: none;
+					}
+                }
+                .btn-change-area{
+                    width: 12.6rem;
+                    height: 4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #FFFFFF;
+                    font-size: 1.3rem;
+                    background: #FF88B3;
+                    border: 0.3rem solid rgb(254, 150, 185);
+                    border-radius: 1rem;
+                    position: relative;
+                    z-index: 2;
+                    overflow: hidden;
+                    opacity: 1 !important;
+                    img {
+                        margin-right: 0.6rem;
+                        width: 1.2rem;
+                    }
+                }
+                &:hover {
+                    .icon-search {
+                        background-image: url("/assets/img/user/common/icon_search_SP.svg");
+                    }
+                }
+            }
+        }
+    }
+    .breadcrumbs {
+        background: #FFFFFF;
+        padding: 0 1rem;
+        
+        .inner-860 {
+          overflow-x: auto;
+          white-space: nowrap;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+      
+        .inner-860::-webkit-scrollbar {
+          display: none;
+        }
+      
+        ul {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            height: 2.8rem;
+            gap: 1.8rem;
+            
+            li {
+                font-size: 1rem;
+                line-height: 1.2rem;
+                position: relative;
+                display: inline-block;
+                
+                &:after {
+                    content: "";
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    background-image: url("/assets/img/user/common/ico_arrow_r_gray.svg");
+                    background-repeat: no-repeat;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    right: -1.4rem;
+                    position: absolute;
+                    display: inline-block;
+                }
+
+                &:last-child {
+                    color: #FF88B3;
+                }
+              
+                &:last-child:after {
+                    display: none;
+                }
+              
+                a, span {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }      
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_431609" data-name="長方形 431609" width="30" height="30" transform="translate(173 45)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="長方形_426962" data-name="長方形 426962" width="24" height="26.15" fill="#ffa43b"/>
+    </clipPath>
+  </defs>
+  <g id="マスクグループ_1111004" data-name="マスクグループ 1111004" transform="translate(-173 -45)" clip-path="url(#clip-path)">
+    <g id="グループ_1108894" data-name="グループ 1108894" transform="translate(176 47)">
+      <g id="グループ_1108529" data-name="グループ 1108529" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+        <path id="パス_1144928" data-name="パス 1144928" d="M23.145,19.753l-4.627-3.594a2.218,2.218,0,0,0-3.068.352l-.86,1.06a1.693,1.693,0,0,1-.483.416c-.318.176-1.17.661-4.272-2.978-3.063-3.6-2.453-4.368-2.223-4.658A1.687,1.687,0,0,1,8.1,9.944l1.186-.68a2.22,2.22,0,0,0,.836-2.972L7.309,1.15A2.2,2.2,0,0,0,4.393.232L3.323.764A5.721,5.721,0,0,0,.514,4.036C-1.246,8.828,1.8,14.864,5.279,18.956,8.37,22.58,13.087,26.15,17.642,26.15A8.215,8.215,0,0,0,19.213,26a5.755,5.755,0,0,0,3.712-2.3l.663-.925a2.2,2.2,0,0,0-.442-3.026" transform="translate(0 0)" fill="#ffa43b"/>
+      </g>
+    </g>
+  </g>
+</svg>

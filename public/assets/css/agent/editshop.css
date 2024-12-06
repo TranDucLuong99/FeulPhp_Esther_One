@@ -1,0 +1,71 @@
+#content {
+  background-color: #e0e0e0;
+  min-height: 100vh; }
+  #content .container {
+    max-width: 86rem;
+    width: 100%;
+    margin: auto;
+    padding: 2rem; }
+    #content .container table {
+      width: 100%;
+      background: #ffffff;
+      border: 0.1rem solid;
+      border-spacing: 0; }
+      #content .container table th,
+      #content .container table td {
+        border: 0.1rem solid;
+        padding: 0.2rem; }
+      #content .container table .label {
+        width: 20%; }
+        #content .container table .label .required {
+          color: red;
+          display: inline; }
+        #content .container table .label .no_required {
+          display: none; }
+      #content .container table .field {
+        width: 80%; }
+        #content .container table .field input[type="text"] {
+          width: 100%;
+          box-sizing: border-box; }
+        #content .container table .field .field-radio {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          #content .container table .field .field-radio label {
+            margin-right: 2rem; }
+        #content .container table .field textarea {
+          width: 100%;
+          box-sizing: border-box;
+          line-height: 1.5; }
+        #content .container table .field .job-img {
+          width: 80%;
+          height: auto; }
+        #content .container table .field.field-edit {
+          font-size: 16px;
+          color: red;
+          border-color: #000; }
+        #content .container table .field .character_info {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 0.5rem; }
+      #content .container table .error_comment {
+        font-size: 16px;
+        color: red; }
+      #content .container table .active_yes {
+        background: #fff8dc; }
+      #content .container table .active_no {
+        background: #ffb6c1; }
+      #content .container table .background_error {
+        background-color: #ff9bcd; }
+    #content .container .form-btn-area {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 3rem; }
+      #content .container .form-btn-area input {
+        border-radius: 0.5rem;
+        padding: 0.5rem 3rem;
+        margin-bottom: 1rem; }
+        #content .container .form-btn-area input:first-child {
+          margin-right: 1rem; }
+
+/*# sourceMappingURL=editshop.css.map */

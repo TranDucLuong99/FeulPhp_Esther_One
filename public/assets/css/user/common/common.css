@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html {
+  font-size: 2.6666666667vw;
+  -webkit-tap-highlight-color: transparent;
+  outline: none; }
+  html:focus {
+    outline: none; }
+
+@media screen and (min-width: 451px) {
+  html {
+    font-size: 62.5%; } }
+body {
+  font-size: 1.4rem;
+  font-family: "ヒラギノ角ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #444444; }
+
+button {
+  border: none;
+  background: transparent; }
+
+:where(a) {
+  color: #444444; }
+
+:where(:focus-visible) {
+  outline: none;
+  outline-offset: 0; }
+
+.main-page {
+  margin-top: 8rem; }
+
+.inner-860 {
+  max-width: 86rem;
+  width: 100%;
+  margin: auto; }
+
+#to-top {
+  height: 1px;
+  display: none; }
+
+.is-pc {
+  display: block !important; }
+
+.is-sp {
+  display: none !important; }
+
+@media screen and (max-width: 450px) {
+  .is-pc {
+    display: none !important; }
+
+  .is-sp {
+    display: block !important; }
+
+  .main-page {
+    margin-top: 6.4rem; } }
+
+/*# sourceMappingURL=common.css.map */

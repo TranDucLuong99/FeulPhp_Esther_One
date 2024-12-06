@@ -1,0 +1,138 @@
+#content {
+  background-color: #e0e0e0;
+  min-height: 100vh; }
+  #content .container {
+    padding: 0 5px;
+    box-sizing: border-box;
+    background-color: #e0e0e0;
+    padding-top: 0.5rem;
+    padding-bottom: 5rem; }
+    #content .container .page_title {
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      align-items: center; }
+    #content .container .flash-message {
+      color: #ff0000; }
+    #content .container .no_ngwords {
+      color: #ff0000; }
+    #content .container .button_area a {
+      text-decoration: none;
+      color: #000; }
+    #content .container .button_area .csv-control-item {
+      display: inline-block; }
+      #content .container .button_area .csv-control-item button {
+        cursor: pointer; }
+    #content .container .register_ngword_area {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem; }
+    #content .container .ngword_type_filter_area {
+      padding-top: 1rem; }
+      #content .container .ngword_type_filter_area label {
+        position: relative;
+        margin-right: 0.5rem; }
+        #content .container .ngword_type_filter_area label::after {
+          content: "/";
+          margin-left: 0.5rem;
+          color: #888; }
+        #content .container .ngword_type_filter_area label:last-child::after {
+          content: ""; }
+    #content .container .search_ngword_area {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      align-items: center; }
+    #content .container .total_ngword_area {
+      padding-top: 1rem; }
+    #content .container .pagination_area {
+      padding: 1rem 0;
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem; }
+    #content .container table,
+    #content .container th,
+    #content .container td {
+      border: 1px solid;
+      padding: 0.5rem;
+      text-align: center; }
+    #content .container table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border-color: #000;
+      width: 100%; }
+      #content .container table thead {
+        background-color: #a1ea9c;
+        font-weight: bold; }
+      #content .container table .enable {
+        background: #fff; }
+      #content .container table .disable {
+        background: #888; }
+      #content .container table .ngword_order_no {
+        width: 2%; }
+      #content .container table .ngword_word {
+        width: 20%;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-word; }
+      #content .container table .ngword_type {
+        width: 7%; }
+      #content .container table .ngword_other_text {
+        width: 20%;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-word; }
+      #content .container table .ngword_created_at {
+        width: 15%; }
+      #content .container table .ngword_updated_at {
+        width: 15%; }
+      #content .container table .ngword_active_flg {
+        width: 6%; }
+      #content .container table .ngword_action {
+        width: 6%;
+        text-align: center; }
+        #content .container table .ngword_action a {
+          text-decoration: none;
+          color: #000; }
+    #content .container .flash-message {
+      color: #ff0000;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 16px 5px; }
+    #content .container .button {
+      padding: 3px 20px; }
+    #content .container .item-tr {
+      text-align: center;
+      white-space: nowrap;
+      padding: 5px 10px;
+      background-color: #66ccff; }
+    #content .container .item-ttl {
+      padding: 8px 0; }
+    #content .container .word-input-area {
+      margin: 30px 0 10px; }
+    #content .container .error-message-area {
+      color: #ff0000;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 16px 5px; }
+    #content .container .error-message {
+      margin: 5px 0; }
+    #content .container .ngword-regist-table {
+      width: 80%;
+      table-layout: fixed;
+      margin-bottom: 20px; }
+      #content .container .ngword-regist-table .item-ttl.radio {
+        width: 20%; }
+      #content .container .ngword-regist-table .item-ttl .require {
+        color: #ff0000; }
+      #content .container .ngword-regist-table .item-name {
+        text-align: center;
+        overflow: hidden;
+        text-overflow: clip;
+        word-wrap: break-word;
+        padding: 8px 5px; }
+        #content .container .ngword-regist-table .item-name .textarea {
+          width: 90%; }
+
+/*# sourceMappingURL=ngword.css.map */

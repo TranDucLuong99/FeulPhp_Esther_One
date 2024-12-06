@@ -469,6 +469,7 @@ return array(
 
 		 'packages' => array(
 		 	 'orm',
+             'auth',
 		 ),
 
 		/**
@@ -531,5 +532,14 @@ return array(
 		 */
          'helpers' => array('debug'),
 		// 'language' => array(),
+         'auth' => array(
+             'driver' => 'SimpleAuth',  // Chỉ định sử dụng SimpleAuth
+             'cookie_name' => 'fuel_auth', // Tên cookie lưu trữ thông tin người dùng đã đăng nhập
+             'user_model' => 'user',  // Tên model người dùng (đảm bảo bạn có model này)
+             'salt' => 'random_salt_string', // Salt cho bảo mật mật khẩu
+             'hash_method' => 'sha256', // Phương pháp mã hóa mật khẩu
+             'iterations' => 10000, // Số lần lặp lại quá trình hash
+             'remember_me' => true,  // Cho phép "Ghi nhớ tôi"
+         ),
 	 ),
 );

@@ -7,4 +7,5 @@
             <li><a href="/admin/user">Users</a></li>
         </ul>
     </nav>
+    <a href="/admin/logout" class="logout-btn">Logout</a>
 </div>

@@ -53,9 +53,11 @@ return array(
 
     'admin/user' => 'admin/user/index',
     'admin/user/create' => 'admin/user/create',
+    'admin/user/edit/(:num)' => 'admin/user/edit/$1',
+    'admin/user/delete/(:num)' => 'admin/user/delete/$1',
 
-    'admin/login' => 'admin/login/index',       // Form đăng nhập
-    'admin/dashboard' => 'admin/dashboard/index', // Dashboard sau khi đăng nhập
-    'admin/logout' => 'admin/dashboard/logout', // Đăng xuất
+    'admin/login' => 'admin/login/index',
+    'admin/register' => 'admin/register/index',
+    'admin/logout' => 'admin/login/logout',
 
 );

@@ -26,6 +26,7 @@ class Controller_Admin_User extends Controller_Admin_Base
             $validation->add_field('username', 'Username', 'required|min_length[3]|max_length[50]');
             $validation->add_field('name', 'Name', 'required');
             $validation->add_field('password', 'Password', 'required|min_length[6]');
+            $validation->add_field('email', 'email', 'required|min_length[6]');
 
             // Kiểm tra dữ liệu từ form
             if ($validation->run()) {
@@ -36,15 +37,16 @@ class Controller_Admin_User extends Controller_Admin_Base
                 $name = Input::post('name');
                 $username = Input::post('username');
                 $password = Input::post('password');
+                $email = Input::post('email');
 
                 try {
-                    Model_User::insert_data_user($name, $username, $password);
+                    Model_User::insert_data_user($name, $username, $password, $email);
 
                     Session::set_flash('success', 'User created successfully!');
 
                     Response::redirect('admin/user');
                 } catch (Exception $e) {
-                    Session::set_flash($e->get_message());
+                    Session::set_flash($e->getMessage());
                 }
             } else {
                 $errors = $validation->error();

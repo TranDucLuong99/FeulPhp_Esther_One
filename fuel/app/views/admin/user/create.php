@@ -105,6 +105,11 @@
     </div>
 
     <div class="form-group">
+        <label for="email">Email</label>
+        <?php echo Form::input('email', '', array('id' => 'email', 'class' => 'input-field', 'placeholder' => 'Enter email user')); ?>
+    </div>
+
+    <div class="form-group">
         <label for="password">Password</label>
         <?php echo Form::password('password', '', array('id' => 'password', 'class' => 'input-field', 'placeholder' => 'Enter password user')); ?>
     </div>
@@ -130,16 +135,3 @@
 
     <?php echo Form::close(); ?>
 </div>
-
-<!--<form action="/admin/user/create" method="post">-->
-<!--    <label for="username">Username:</label>-->
-<!--    <input type="text" id="username" name="username">-->
-<!---->
-<!--    <label for="email">Email:</label>-->
-<!--    <input type="email" id="email" name="email">-->
-<!---->
-<!--    <label for="password">Password:</label>-->
-<!--    <input type="password" id="password" name="password">-->
-<!---->
-<!--    <button type="submit">Create User</button>-->
-<!--</form>-->

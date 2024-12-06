@@ -6,6 +6,8 @@ class Model_User extends \Orm\Model
 		"id",
 		"name",
 		"username",
+		"email",
+		"last_login",
 		"password",
 		"created_at",
 		"updated_at",
@@ -40,17 +42,18 @@ class Model_User extends \Orm\Model
 	protected static $_belongs_to = array(
 	);
 
-    public static function insert_data_user(string $name, string $username, string $password)
+    public static function insert_data_user(string $name, string $username, string $password, string $email)
     {
         // Mã hóa mật khẩu bằng password_hash
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        $hashed_password = Auth::hash_password($password);
 
         return DB::insert('users')
-            ->columns(array('name', 'username', 'password'))
+            ->columns(array('name', 'username', 'password', 'email'))
             ->values([
-            'name' => $name,
-            'username' => $username,
-            'password' => $hashed_password,
+                'name' => $name,
+                'username' => $username,
+                'password' => $hashed_password,
+                'email' => $email,
         ])->execute();
     }
 }

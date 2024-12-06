@@ -9,6 +9,12 @@ class Controller_Admin_Base extends Controller_Template
     public function before()
     {
         parent::before();
+        /*
+         * Cách 1 check Auth cho các route sử dụng chung template này
+         */
+        if (!Auth::check()) {
+            Response::redirect('/admin/login');
+        }
         // Load the template view
         if (!isset($this->template)) {
             $this->template = View::forge('template');

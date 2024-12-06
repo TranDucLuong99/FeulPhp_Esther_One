@@ -129,8 +129,24 @@ nav ul li a {
     background-color: #388e3c; /* Màu nền khi nhấn */
     transform: translateY(0); /* Đặt nút về vị trí ban đầu */
 }
+/*css btn logout*/
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f44336;  /* Màu đỏ */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
 
+/*css pagination*/
 .pagination {
     display: flex;
     list-style: none;
@@ -155,5 +171,6 @@ nav ul li a {
 .pagination .next a {
     font-weight: bold;
 }
+
 
 

@@ -1,56 +1,39 @@
 <?php
-
 class Controller_Admin_Login extends Controller_Template
 {
 
     public function action_index()
     {
-        // Render form đăng nhập
-        return \View::forge('admin/login/index');
-    }
-
-    public function action_login()
-    {
-        // Lấy dữ liệu từ form
-        $username = Input::post('username');
-        $password = Input::post('password');
-
-        // Kiểm tra dữ liệu
-        if (empty($username) || empty($password)) {
-            return 'Both username and password are required.';
+        // Nếu người dùng đã đăng nhập, chuyển hướng đến trang dashboard
+        if (Auth::check())
+        {
+            Response::redirect('admin/category/index');
         }
 
-        // Giả lập xác thực từ database
-        $user = \DB::select()
-            ->from('users')
-            ->where('username', $username)
-            ->execute()
-            ->current();
+        if (Input::method() == 'POST')
+        {
+            $username = Input::post('username');
+            $password = Input::post('password');
 
-        if ($user) {
-            // Xác minh mật khẩu
-            if (\password_verify($password, $user['password'])) {
-                // Lưu thông tin đăng nhập vào session
-                Session::set('admin_logged_in', true);
-                Session::set('admin_username', $username);
-
-                // Redirect đến trang admin dashboard
-                return \Response::redirect('admin/post');
-            } else {
-                return 'Invalid password.';
+            // Kiểm tra đăng nhập
+            if (Auth::login($username, $password))
+            {
+                Response::redirect('admin/category/index');  // Nếu đăng nhập thành công, chuyển hướng
             }
-        } else {
-            return 'User not found.';
+            else
+            {
+                Session::set_flash('error', 'Invalid login credentials');
+            }
         }
+
+        // Hiển thị form đăng nhập
+        return View::forge('admin/login/index');
     }
 
     public function action_logout()
     {
-        Session::delete('admin_logged_in');
-
-        Session::delete('admin_username');
-
-        return \Response::redirect('admin/login');
+        Auth::logout();
+        Response::redirect('admin/login');
     }
 
 }

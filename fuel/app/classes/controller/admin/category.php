@@ -5,13 +5,35 @@ class Controller_Admin_Category extends Controller_Admin_Base
 
 	public function action_index()
 	{
-        $categories = Model_Category::find('all');
+        /*
+        Load cấu hình phân trang mới từ trong config/pagination.php
+            $config = Config::get('pagination');
+            $config['pagination_url'] = 'http://localhost:8000/admin/category/';
+            $config['total_items'] = 5;
+            $config['per_page'] = 2;
+            $config['uri_segment'] = 3;
+        */
+        $config = [
+            'pagination_url' => 'http://localhost:8000/admin/category/',
+            'total_items'    => Model_Category::count(),
+            'per_page'       => 5,
+        ];
+
+        $pagination = Pagination::forge('mypagination', $config);
+
+        $categories = Model_Category::query()
+            ->rows_offset($pagination->offset)
+            ->rows_limit($pagination->per_page)
+            ->get();
 
         $data = [
             'title'   => 'Manage Categories',
             'categories'   => $categories,
             'content' => 'Danh sách danh mục',
         ];
+
+        $this->template->set_global('pagination', $pagination, false);
+
         $this->template->content = \View::forge('admin/category/index', $data);
 	}
 

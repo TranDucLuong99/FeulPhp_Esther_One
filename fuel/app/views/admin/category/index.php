@@ -30,3 +30,8 @@
     <?php endforeach; ?>
     </tbody>
 </table>
+
+<!-- Hiển thị nút phân trang -->
+<div class="pagination">
+    <?php echo $pagination; ?>
+</div>

@@ -40,10 +40,16 @@ return array(
 
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
 
-    'admin/post' => 'admin/post/index',
+    'admin/post(/:num)?' => 'admin/post/index',
     'admin/post/create' => 'admin/post/create',
     'admin/post/edit/(:num)' => 'admin/post/edit/$1',
     'admin/post/delete/(:num)' => 'admin/post/delete/$1',
+
+    //Nếu dùng phân trang thì phải thêm (/:num)?
+    'admin/category(/:num)?' => 'admin/category/index',
+    'admin/category/create' => 'admin/category/create',
+    'admin/category/edit/(:num)' => 'admin/category/edit/$1',
+    'admin/category/delete/(:num)' => 'admin/category/delete/$1',
 
     'admin/user' => 'admin/user/index',
     'admin/user/create' => 'admin/user/create',
@@ -51,9 +57,5 @@ return array(
     'admin/login' => 'admin/login/index',       // Form đăng nhập
     'admin/dashboard' => 'admin/dashboard/index', // Dashboard sau khi đăng nhập
     'admin/logout' => 'admin/dashboard/logout', // Đăng xuất
-
-
-
-
 
 );

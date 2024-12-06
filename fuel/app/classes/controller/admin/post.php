@@ -2,19 +2,37 @@
 
 class Controller_Admin_Post extends Controller_Admin_Base
 {
-//    public $template = 'admin/template';
-
     public function action_index()
 	{
         // Load posts from database
-        $posts = Model_Post::find('all', array(
-            'related' => array('category')
-        ));
+        $config = array(
+            'pagination_url' => 'http://localhost:8000/admin/post/',
+            'total_items'    => Model_Post::count(),
+            'per_page'       => 5,
+        );
+
+        $pagination = Pagination::forge('mypagination', $config);
+        /*
+         *  Cách viết 1
+            $posts = Model_Post::find('all', array(
+                'related' => array('category'),
+                'limit'   => $pagination->per_page,   // Số lượng bản ghi mỗi trang
+                'offset'  => $pagination->offset,     // Vị trí bắt đầu từ đâu (tính từ số trang)
+            ));
+        */
+        $posts = Model_Post::query()
+            ->related('category')    // Gọi quan hệ 'category'
+            ->limit($pagination->per_page) // Giới hạn số lượng bản ghi mỗi trang
+            ->offset($pagination->offset) // Xác định trang bắt đầu
+            ->get();
+
 
         $data = [
             'title'   => 'Manage Posts',
             'posts'   => $posts,
         ];
+
+        $this->template->set_global('pagination', $pagination, false);
 
         // Render view with posts
         $this->template->content = \View::forge('admin/post/index', $data);

@@ -27,9 +27,11 @@
             <td>
                 <a href="/admin/post/edit/<?php echo $post->id; ?>" class="edit-btn">Edit</a> |
                 <a href="/admin/post/delete/<?php echo $post->id; ?>" onclick="return confirm('Are you sure you want to delete this post?');" class="delete-btn" >Delete</a>
-<!--                <a href="--><?php //echo Uri::create('admin/post/delete/' . $post->id); ?><!--" onclick="return confirm('Are you sure you want to delete this post?');" class="delete-btn" >Delete</a>-->
             </td>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table>
+<div class="pagination">
+    <?php echo $pagination; ?>
+</div>

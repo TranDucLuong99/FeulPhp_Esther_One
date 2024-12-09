@@ -51,7 +51,7 @@ return array(
     'admin/category/edit/(:num)' => 'admin/category/edit/$1',
     'admin/category/delete/(:num)' => 'admin/category/delete/$1',
 
-    'admin/user' => 'admin/user/index',
+    'admin/user(/:num)?' => 'admin/user/index',
     'admin/user/create' => 'admin/user/create',
     'admin/user/edit/(:num)' => 'admin/user/edit/$1',
     'admin/user/delete/(:num)' => 'admin/user/delete/$1',

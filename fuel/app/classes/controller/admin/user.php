@@ -9,16 +9,30 @@ class Controller_Admin_User extends Controller_Admin_Base
         if ($search) {
             $users = Model_User::query()
                 ->where('name', 'like', "%$search%")
-                ->or_where('username', 'like', "%$search%")
-                ->get();
+                ->or_where('username', 'like', "%$search%");
         } else {
-            $users = Model_User::find('all');
+            $users = Model_User::query();
         }
+
+        $config = [
+            'pagination_url' => 'http://localhost:8000/admin/user/',
+            'total_items'    => $users->count(),
+            'per_page'       => 5,
+        ];
+
+        $pagination = Pagination::forge('mypagination', $config);
+
+        $users = $users ->limit($pagination->per_page)
+                        ->offset($pagination->offset)
+                        ->get();
         $data = [
             'title' => "Manage Users" ,
             'users' => $users,
             'search' => $search
         ];
+
+        $this->template->set_global('pagination', $pagination, false);
+
         $this->template->content = View::forge('admin/user/index', $data);
     }
     public function action_create()
@@ -26,7 +40,6 @@ class Controller_Admin_User extends Controller_Admin_Base
         if (\Input::method() === 'POST'){
             // Tạo đối tượng Validation
             $validation = Validation::forge();
-
 
             // Định nghĩa các quy tắc
             $validation->add_field('username', 'Username', 'required|min_length[3]|max_length[50]');

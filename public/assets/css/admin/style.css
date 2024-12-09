@@ -104,12 +104,20 @@ nav ul li a {
     font-weight: bold;
 }
 
+.top_filter {
+    display: flex;
+    justify-content: space-between; /* Căn chỉnh hai phần tử ra hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
 /* Định dạng cho nút */
 .btn {
     display: inline-block;
     background-color: #4CAF50; /* Màu nền xanh lá */
     color: white; /* Màu chữ trắng */
     padding: 10px 20px; /* Khoảng cách xung quanh chữ */
+    border: none;
     font-size: 16px; /* Cỡ chữ */
     text-align: center; /* Căn giữa chữ */
     text-decoration: none; /* Bỏ gạch chân */
@@ -129,6 +137,32 @@ nav ul li a {
     background-color: #388e3c; /* Màu nền khi nhấn */
     transform: translateY(0); /* Đặt nút về vị trí ban đầu */
 }
+
+/* Style nhẹ nhàng cho ô nhập liệu */
+.input-field {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Đường viền mỏng, màu xám nhạt */
+    border-radius: 5px; /* Góc tròn */
+    width: 300px; /* Chiều rộng của ô nhập liệu */
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    color: #333; /* Màu chữ */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+/* Hiệu ứng khi ô nhập liệu được focus */
+.input-field:focus {
+    border-color: #007bff; /* Đổi màu viền khi focus */
+    background-color: #ffffff; /* Đổi màu nền khi focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Thêm bóng đổ nhẹ khi focus */
+    outline: none; /* Loại bỏ outline mặc định */
+}
+
+/* Hiệu ứng khi hover */
+.input-field:hover {
+    border-color: #999; /* Đổi màu viền khi hover */
+}
+
 /*css btn logout*/
 .logout-btn {
     position: absolute;

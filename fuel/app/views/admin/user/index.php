@@ -1,13 +1,23 @@
 <h2><?php echo $title; ?></h2>
 
-<a href="/admin/user/create" class="btn">Add New User</a>
+<div class="top_filter" style="display: flex">
+    <div class="btn_add">
+        <a href="/admin/user/create" class="btn add-user-btn">Add New User</a>
+    </div>
+
+    <div class="btn_search">
+        <form method="GET" action="/admin/user/index" id="searchForm">
+            <input type="text" name="search" placeholder="Search by name or username" value="<?= isset($search) ? $search : '' ?>" class="input-field">
+            <button type="submit" class="btn search-btn">Search</button>
+        </form>
+    </div>
+</div>
 
 <?php if (\Session::get_flash('success')): ?>
     <div class="alert alert-success">
         <?= \Session::get_flash('success'); ?>
     </div>
 <?php endif; ?>
-
 
 <table class="data-table">
     <thead>

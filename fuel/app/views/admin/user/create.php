@@ -90,6 +90,10 @@
         <p style="color:red;"><?= Session::get_flash('error_password'); ?></p>
     <?php endif; ?>
 
+    <?php if (Session::get_flash('error_email')): ?>
+        <p style="color:red;"><?= Session::get_flash('error_email'); ?></p>
+    <?php endif; ?>
+
     <h1>Create New User</h1>
 
     <?php echo Form::open(array('action' => 'admin/user/create')); ?>

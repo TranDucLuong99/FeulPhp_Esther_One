@@ -44,6 +44,8 @@ return array(
     'admin/post/create' => 'admin/post/create',
     'admin/post/edit/(:num)' => 'admin/post/edit/$1',
     'admin/post/delete/(:num)' => 'admin/post/delete/$1',
+    'admin/post/export' => 'admin/post/export',
+    'admin/post/import' => 'admin/post/import',
 
     //Nếu dùng phân trang thì phải thêm (/:num)?
     'admin/category(/:num)?' => 'admin/category/index',

@@ -1,6 +1,15 @@
 <h2><?php echo $title; ?></h2>
-<a href="/admin/post/create" class="btn">Add New Post</a>
+<div class="top_filter">
+    <a href="/admin/post/create" class="btn">Add New Post</a>
 
+    <a href="/admin/post/export" class="btn" style="background: #2e6da4">Export Data</a>
+</div>
+
+<?php if (\Session::get_flash('success')): ?>
+    <div class="alert alert-success" style="color: #0000BB">
+        <?= \Session::get_flash('success'); ?>
+    </div>
+<?php endif; ?>
 <table class="data-table">
     <thead>
     <tr>

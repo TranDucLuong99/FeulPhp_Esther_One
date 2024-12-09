@@ -472,6 +472,11 @@ return array(
              'auth',
 		 ),
 
+         //Load các class
+         'classes' => [
+             'Service\\Export',  // Đảm bảo rằng class Export luôn được load
+         ],
+
 		/**
 		 * ---------------------------------------------------------------------
 		 *  These modules are always loaded on Fuel's startup.
@@ -530,8 +535,11 @@ return array(
 		 *  If you don't want the lang in a group, use null as groupname.
 		 * ---------------------------------------------------------------------
 		 */
+         // 'language' => array(),
+
          'helpers' => array('debug'),
-		// 'language' => array(),
+
+
          'auth' => array(
              'driver' => 'SimpleAuth',  // Chỉ định sử dụng SimpleAuth
              'cookie_name' => 'fuel_auth', // Tên cookie lưu trữ thông tin người dùng đã đăng nhập
@@ -542,4 +550,10 @@ return array(
              'remember_me' => true,  // Cho phép "Ghi nhớ tôi"
          ),
 	 ),
+
+//    'autoload' => [
+//        'classes' => [
+//            'Service\\Export', // Thêm dòng này nếu cần yêu cầu load class này tự động
+//        ],
+//    ],
 );

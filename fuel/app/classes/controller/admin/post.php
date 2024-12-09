@@ -12,14 +12,7 @@ class Controller_Admin_Post extends Controller_Admin_Base
         );
 
         $pagination = Pagination::forge('mypagination', $config);
-        /*
-         *  Cách viết 1
-            $posts = Model_Post::find('all', array(
-                'related' => array('category'),
-                'limit'   => $pagination->per_page,   // Số lượng bản ghi mỗi trang
-                'offset'  => $pagination->offset,     // Vị trí bắt đầu từ đâu (tính từ số trang)
-            ));
-        */
+
         $posts = Model_Post::query()
             ->related('category')    // Gọi quan hệ 'category'
             ->limit($pagination->per_page) // Giới hạn số lượng bản ghi mỗi trang
@@ -114,4 +107,48 @@ class Controller_Admin_Post extends Controller_Admin_Base
             Response::redirect('admin/post'); // Hoặc hiển thị lỗi
         }
     }
+
+    public function action_export()
+    {
+        $posts = Model_Post::query()->related('category')->get();
+
+        $export = new \Service\Export();
+
+        try {
+            $export::export_posts_to_excel($posts);
+//            Session::set_flash('success', 'Export successfully!');
+//
+//            Response::redirect('admin/post/index');
+        } catch (Exception $e) {
+            Session::set_flash('error', 'Đã xảy ra lỗi khi xuất dữ liệu: ' . $e->getMessage());
+        }
+    }
+
+    public function action_import()
+    {
+        // Kiểm tra xem người dùng có upload file không
+        if (Input::file('import_file')) {
+            $file = Input::file('import_file');
+
+            // Kiểm tra định dạng file (ví dụ CSV)
+            if ($file['extension'] != 'csv') {
+                Session::set_flash('error', 'File phải là định dạng CSV.');
+                return Redirect::to('import');
+            }
+
+            // Sử dụng Service Import để xử lý dữ liệu
+            try {
+                Import::import_data($file['tmp_name']); // Gọi Service để import dữ liệu
+                Session::set_flash('success', 'Dữ liệu đã được import thành công.');
+            } catch (\Exception $e) {
+                Session::set_flash('error', 'Đã xảy ra lỗi: ' . $e->getMessage());
+            }
+
+            return Redirect::to('import');
+        }
+
+        Session::set_flash('error', 'Không có file để upload.');
+        return Redirect::to('import');
+    }
+
 }

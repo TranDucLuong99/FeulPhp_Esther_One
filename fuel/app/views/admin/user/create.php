@@ -76,8 +76,6 @@
 </style>
 
 <div class="container">
-    <?php echo Form::close(); ?>
-
     <?php if (Session::get_flash('error_username')): ?>
         <p style="color:red;"><?= Session::get_flash('error_username'); ?></p>
     <?php endif; ?>

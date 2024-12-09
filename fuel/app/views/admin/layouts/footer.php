@@ -1,3 +1,3 @@
 <div class="footer">
-    <p>&copy; <?= date('Y'); ?> Admin Panel. All Rights Reserved.</p>
+    <p>&copy; <?= date('Y'); ?> Admin Esther One. All Rights Reserved.</p>
 </div>

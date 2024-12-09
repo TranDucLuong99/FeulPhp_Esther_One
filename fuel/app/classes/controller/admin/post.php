@@ -151,4 +151,20 @@ class Controller_Admin_Post extends Controller_Admin_Base
         return Redirect::to('import');
     }
 
+    public function action_change_status($id)
+    {
+        // Lấy bài viết theo ID
+        $post = Model_Post::find($id);
+
+        if ($post) {
+            // Thay đổi trạng thái bài viết
+            $post->status = ($post->status == 1) ? 0 : 1;
+            $post->save();
+        }
+
+        // Thiết lập thông báo thành công
+        Session::set_flash('success', 'Status updated successfully');
+        Response::redirect('admin/post');
+    }
+
 }

@@ -46,8 +46,10 @@ return array(
     'admin/post/delete/(:num)' => 'admin/post/delete/$1',
     'admin/post/export' => 'admin/post/export',
     'admin/post/import' => 'admin/post/import',
+    'admin/post/change_status/(:num)', 'admin/post/change_status/$1',
 
-    //Nếu dùng phân trang thì phải thêm (/:num)?
+
+//Nếu dùng phân trang thì phải thêm (/:num)?
     'admin/category(/:num)?' => 'admin/category/index',
     'admin/category/create' => 'admin/category/create',
     'admin/category/edit/(:num)' => 'admin/category/edit/$1',

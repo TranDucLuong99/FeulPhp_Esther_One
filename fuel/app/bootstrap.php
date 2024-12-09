@@ -15,6 +15,8 @@ require COREPATH.'bootstrap.php';
 
 // Add framework overload classes here
 \Autoloader::add_classes(array(
+    /*Autoloader Class*/
+    // 'Service\\Export' => APPPATH.'classes/service/export.php',
 	// Example: 'View' => APPPATH.'classes/myview.php',
 ));
 

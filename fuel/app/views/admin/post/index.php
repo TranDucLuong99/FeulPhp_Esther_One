@@ -30,10 +30,21 @@
             <td><?php echo $post->title; ?></td>
             <td><?php echo $post->category->name; ?></td>
             <td><?php echo substr($post->content, 0, 100); ?>...</td> <!-- Chỉ hiển thị phần đầu của nội dung -->
-            <td><?php echo $post->status; ?></td>
+            <td>
+                <a href="<?php echo Uri::create('admin/post/change_status/'.$post->id); ?>"
+                   class="btn-<?php echo ($post->status == 1) ? 'active' : 'inactive'; ?>"
+                   onclick="return confirm('Are you sure you want to change status this post?');"
+                   style="color: <?php echo ($post->status == 1) ? '#1b6d85' : '#d32f2f'; ?>"
+                >
+                    <?php echo ($post->status == 1) ? 'Active' : 'Inactive'; ?>
+                </a>
+            </td>
+
+
             <td><?php echo $post->created_at; ?></td>
             <td><?php echo $post->updated_at; ?></td>
             <td>
+
                 <a href="/admin/post/edit/<?php echo $post->id; ?>" class="edit-btn">Edit</a> |
                 <a href="/admin/post/delete/<?php echo $post->id; ?>" onclick="return confirm('Are you sure you want to delete this post?');" class="delete-btn" >Delete</a>
             </td>

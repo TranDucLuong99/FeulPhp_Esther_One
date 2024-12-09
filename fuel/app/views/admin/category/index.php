@@ -1,6 +1,10 @@
 <h2><?php echo $title; ?></h2>
 <a href="/admin/category/create" class="btn">Add New Category</a>
-
+<?php if (\Session::get_flash('success')): ?>
+    <div class="alert alert-success" style="color: #0000BB">
+        <?= \Session::get_flash('success'); ?>
+    </div>
+<?php endif; ?>
 <table class="data-table">
     <thead>
     <tr>
@@ -19,7 +23,15 @@
             <td><?php echo $category->id; ?></td>
             <td><?php echo $category->name; ?></td>
             <td><?php echo $category->description; ?></td>
-            <td><?php echo $category->status; ?></td>
+            <td>
+                <a href="<?php echo Uri::create('admin/category/change_status/'.$category->id); ?>"
+                   class="btn-<?php echo ($category->status == 1) ? 'active' : 'inactive'; ?>"
+                   onclick="return confirm('Are you sure you want to change status this category?');"
+                   style="color: <?php echo ($category->status == 1) ? '#1b6d85' : '#d32f2f'; ?>"
+                >
+                    <?php echo ($category->status == 1) ? 'Active' : 'Inactive'; ?>
+                </a>
+            </td>
             <td><?php echo $category->created_at; ?></td>
             <td><?php echo $category->updated_at; ?></td>
             <td>

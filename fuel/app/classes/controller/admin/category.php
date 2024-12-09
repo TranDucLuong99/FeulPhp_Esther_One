@@ -88,4 +88,18 @@ class Controller_Admin_Category extends Controller_Admin_Base
         }
     }
 
+    public function action_change_status($id)
+    {
+        $category = Model_Category::find($id);
+
+        if ($category) {
+            $category->status = ($category->status == 1) ? 0 : 1;
+            $category->save();
+        }
+
+        // Thiết lập thông báo thành công
+        Session::set_flash('success', 'Status updated successfully');
+        Response::redirect('admin/category');
+    }
+
 }

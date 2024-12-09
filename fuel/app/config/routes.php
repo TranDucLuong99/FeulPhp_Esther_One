@@ -49,11 +49,12 @@ return array(
     'admin/post/change_status/(:num)', 'admin/post/change_status/$1',
 
 
-//Nếu dùng phân trang thì phải thêm (/:num)?
+    //Nếu dùng phân trang thì phải thêm (/:num)?
     'admin/category(/:num)?' => 'admin/category/index',
     'admin/category/create' => 'admin/category/create',
     'admin/category/edit/(:num)' => 'admin/category/edit/$1',
     'admin/category/delete/(:num)' => 'admin/category/delete/$1',
+    'admin/category/change_status/(:num)', 'admin/category/change_status/$1',
 
     'admin/user(/:num)?' => 'admin/user/index',
     'admin/user/create' => 'admin/user/create',

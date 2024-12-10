@@ -25,13 +25,11 @@ class Controller_User_Search_Base extends Controller_User_Base
         $this->add_js("user/top.js");
         $this->set_common_header("user/common/header_job");
         $this->set_common_footer("user/common/footer_job", ['is_detail' => $this->is_detail]);
-
         $this->service_area = new Service_User_Area();
         $this->prefareas = $this->service_area->get_master_and_small_areas();
         $this->prefarea_name = $this->param('prefarea', null);
         $this->prefarea = $this->service_area->get_pref_area_by_area_name2($this->prefarea_name);
         $this->areas = $this->service_area->get_area_groups_by_pref_id($this->prefarea['area_id']);
-
         $this->area_id = $this->param('area_id', null);
         if ($this->area_id == null) {
             $this->area = $this->prefarea;

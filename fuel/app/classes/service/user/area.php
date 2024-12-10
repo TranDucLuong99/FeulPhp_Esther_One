@@ -28,7 +28,6 @@ class Service_User_Area
         $areas_class_master = Model_Qzin_Area_Main::get_area_by_class(Model_Qzin_Area_Main::AREA_CLASS_MASTER_AREA);
         $area_names = array_column($areas_class_master, 'area_name2');
         $pref_area_ids_has_shop = Model_Qzin_Area_Main::get_pref_area_ids_has_shop();
-//        dd($pref_area_ids_has_shop);
 
         foreach (Model_Qzin_Area_Main::MASTER_AREA_SORT as $area_name2) {
             $found_key = array_search($area_name2, $area_names);
@@ -36,7 +35,6 @@ class Service_User_Area
             $areas_class_pref = Model_Qzin_Area_Main::get_area_by_class_and_master_area_id(Model_Qzin_Area_Main::AREA_CLASS_PREF, $area_master['area_id']);
             $area_master['has_shop'] = 0;
             foreach ($areas_class_pref as &$pref) {
-//                dd(isset($pref_area_ids_has_shop[1]), $pref);
                 $has_shop = isset($pref_area_ids_has_shop[(int)$pref['area_id']]);
                 $pref['has_shop'] = $has_shop;
                 $pref['area_name'] = preg_replace('/(県|都|府)$/u', '', $pref['area_name']);

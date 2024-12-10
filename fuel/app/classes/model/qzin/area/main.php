@@ -202,7 +202,6 @@ class Model_Qzin_Area_Main extends \Orm\Model
 
         $params['area_class'] = self::AREA_CLASS_PREF;
         $params['area_name2'] = $area_name2;
-
         return DB::query($sql, DB::SELECT)->parameters($params)->execute()->as_array();
     }
 

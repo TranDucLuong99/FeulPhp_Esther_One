@@ -518,8 +518,8 @@ return array(
 
 		 'config' => array(
              'app'		=> true,
-//             'crypt'	=> true,
-//             'db'		=> true,
+             'crypt'	=> true,
+             'db'		=> true,
          ),
 
 		/**

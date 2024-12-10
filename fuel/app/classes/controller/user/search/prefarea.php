@@ -25,7 +25,6 @@ class Controller_User_Search_Prefarea extends Controller_User_Search_Base
 
 	public function action_index()
 	{
-        dd(1);
 		$area_name_rp = preg_replace('/(県|都|府)$/u', '', $this->prefarea['area_name']);
 		$this->meta['title']		= $area_name_rp . 'のメンズエステ求人【エステワン】';
 		$this->meta['description']	= $area_name_rp . 'のメンズエステ求人情報を豊富に掲載しています。';

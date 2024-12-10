@@ -74,28 +74,44 @@ class Model_Qzin_Area_Main extends \Orm\Model
     {
         $params = [];
 
-        $sql  = "SELECT s.master_area3 \n";
-        $sql .= "FROM " . Model_Qzin_Area_Main::table() . " s \n";
-        $sql .= "INNER JOIN ( \n";
-        $sql .= "SELECT area2 \n";
-        $sql .= "FROM " . Model_Qzin_Shop_Main::table() . " sm \n";
-        $sql .= "WHERE sm.active_flg = :active_flg \n";
-        $sql .= "AND sm.test_shop = :test_shop  \n";
-        $sql .= "AND sm.option_sub_status != :option_sub_status  \n";
-        $sql .= "AND sm.pay_flg IN :pay_flg  \n";
-        $sql .= "AND sm.title IS NOT NULL \n";
-        $sql .= "AND sm.job_info IS NOT NULL \n";
-        $sql .= "AND sm.img_name IS NOT NULL \n";
-        $sql .= "GROUP BY area2 \n";
-        $sql .= ") sm2 \n";
-        $sql .= "ON s.area_id = sm2.area2 \n";
+//        $sql  = "SELECT s.master_area3 \n";
+//        $sql .= "FROM " . Model_Qzin_Area_Main::table() . " s \n";
+//        $sql .= "INNER JOIN ( \n";
+//        $sql .= "SELECT area2 \n";
+//        $sql .= "FROM " . Model_Qzin_Shop_Main::table() . " sm \n";
+//        $sql .= "WHERE sm.active_flg = :active_flg \n";
+//        $sql .= "AND sm.test_shop = :test_shop  \n";
+//        $sql .= "AND sm.option_sub_status != :option_sub_status  \n";
+//        $sql .= "AND sm.pay_flg IN :pay_flg  \n";
+//        $sql .= "AND sm.title IS NOT NULL \n";
+//        $sql .= "AND sm.job_info IS NOT NULL \n";
+//        $sql .= "AND sm.img_name IS NOT NULL \n";
+//        $sql .= "GROUP BY area2 \n";
+//        $sql .= ") sm2 \n";
+//        $sql .= "ON s.area_id = sm2.area2 \n";
+
 
         $params['active_flg'] = Model_Qzin_Shop_Main::ACTIVE_FLG_YES;
         $params['option_sub_status'] = Model_Qzin_Shop_Main::OPTION_SUB_STATUS_NAMI_HAIHU_C;
         $params['pay_flg'] = [Model_Qzin_Shop_Main::PAY_FLG_REGULAR_LISTING, Model_Qzin_Shop_Main::PAY_FLG_LARGE_LISTING, Model_Qzin_Shop_Main::PAY_FLG_EXTRA_LARGE_LISTING];
         $params['test_shop'] = Model_Qzin_Shop_Main::TEST_SHOP_NO;
 
-        return DB::query($sql, DB::SELECT)->parameters($params)->execute()->as_array('master_area3', 'master_area3');
+        $subquery = DB::select('area2')
+                                ->from([Model_Qzin_Shop_Main::table(), 'sm'])
+                                ->where('sm.active_flg', '=', $params['active_flg'])
+                                ->and_where('sm.test_shop', '=', $params['test_shop'])
+                                ->and_where('sm.option_sub_status', '!=', $params['option_sub_status'])
+                                ->and_where('sm.pay_flg', 'IN', $params['pay_flg'])
+                                ->and_where('sm.title', 'IS NOT', DB::expr('NULL'))
+                                ->and_where('sm.job_info', 'IS NOT', DB::expr('NULL'))
+                                ->and_where('sm.img_name', 'IS NOT', DB::expr('NULL'))
+                                ->group_by('area2');
+        $query = DB::select('s.master_area3')
+                        ->from([Model_Qzin_Area_Main::table(), 's'])
+                        ->join([$subquery, 'sm2'], 'INNER')
+                        ->on('s.area_id', '=', 'sm2.area2');
+
+        return $query->execute()->as_array('master_area3', 'master_area3');
     }
 
     /**
@@ -159,18 +175,16 @@ class Model_Qzin_Area_Main extends \Orm\Model
      */
     public static function get_popular_areas(array $popular_areas)
     {
-        $params = [];
+        $result = DB::select('s.area_id', 's.area_name', 's2.area_name2')
+                        ->from(['area_mains', 's'])
+                        ->join(['area_mains', 's2'], 'INNER')
+                        ->on('s.master_area3', '=', 's2.area_id')
+                        ->where('s.area_id', 'IN', $popular_areas)
+                        ->order_by(DB::expr('FIELD(s.area_id, ' . implode(', ', $popular_areas) . ')'))
+                        ->execute()
+                        ->as_array();
 
-        $sql  = "SELECT s.area_id, s.area_name, s2.area_name2 \n";
-        $sql .= "FROM " . Model_Qzin_Area_Main::table() . " s \n";
-        $sql .= "JOIN " . Model_Qzin_Area_Main::table() . " s2 \n";
-        $sql .= "ON s.master_area3 = s2.area_id \n";
-        $sql .= "WHERE s.area_id IN :area_ids \n";
-        $sql .= "ORDER BY FIELD (s.area_id, " . implode(', ', $popular_areas) . " ) \n";
-
-        $params['area_ids'] = $popular_areas;
-
-        return DB::query($sql, DB::SELECT)->parameters($params)->execute()->as_array();
+        return $result;
     }
 
     public static function get_pref_area_by_area_name2($area_name2)

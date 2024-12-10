@@ -36,7 +36,6 @@ class Controller_User_Search_Prefarea extends Controller_User_Search_Base
 		$service_shop = new Service_User_Shop();
 
 		$total_shop_mains_record = $service_shop->get_total_shop_mains_record(null, $this->prefarea['area_id']);
-
 		if ($total_shop_mains_record == 0) {
 			$this->add_css("user/no_result.css");
 

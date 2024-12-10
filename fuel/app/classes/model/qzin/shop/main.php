@@ -421,7 +421,6 @@ class Model_Qzin_Shop_Main extends \Orm\Model
         $params['option_sub_status'] = Model_Qzin_Shop_Main::OPTION_SUB_STATUS_NAMI_HAIHU_C;
         $params['pay_flg']           = [Model_Qzin_Shop_Main::PAY_FLG_REGULAR_LISTING, Model_Qzin_Shop_Main::PAY_FLG_LARGE_LISTING, Model_Qzin_Shop_Main::PAY_FLG_EXTRA_LARGE_LISTING];
         $params['test_shop']         = Model_Qzin_Shop_Main::TEST_SHOP_NO;
-
         return DB::query($sql, DB::SELECT)->parameters($params)->execute()->get('total');
     }
 

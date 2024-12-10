@@ -10,6 +10,7 @@
  * @link       https://fuelphp.com
  */
 
+
 return array(
 	/**
 	 * -------------------------------------------------------------------------
@@ -18,9 +19,15 @@ return array(
 	 *
 	 */
 
-	'_root_' => 'user/top',
+	'_root_'                                            => 'user/top',
+    'terms'                                             => 'user/termsofservice/index',
+    'privacy' 											=> 'user/privacypolicy/index',
+    'about' 											=> 'user/operatorinformation/index',
+    'sitemap' 											=> 'user/sitemap/index',
 
-	/**
+    'user/ajax/tel_count_up'							=> 'user/ajax/tel_count_up',
+    'user/ajax/line_count_up'							=> 'user/ajax/line_count_up',
+    /**
 	 * -------------------------------------------------------------------------
 	 *  Page not found
 	 * -------------------------------------------------------------------------

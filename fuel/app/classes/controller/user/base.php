@@ -1,9 +1,11 @@
 <?php
+
 use Fuel\Core\Asset;
 use Fuel\Core\Controller_Hybrid;
 use Fuel\Core\Request;
 use Fuel\Core\Uri;
 use Fuel\Core\View;
+
 class Controller_User_Base extends Controller_Hybrid
 {
     /** @var string media (PC/SP) */
@@ -100,16 +102,16 @@ class Controller_User_Base extends Controller_Hybrid
             $this->handle_invalid_url();
         }
 
-//        // useragent judgment
-//        if (empty($this->media)) {
-//            if (Service_Useragent::is_smartphone()) {
-//                $this->media = CONST_ENV_SP;
-//            } else {
-//                $this->media = CONST_ENV_PC;
-//            }
-//        }
+        // useragent judgment
+        if (empty($this->media)) {
+            if (Service_Useragent::is_smartphone()) {
+                $this->media = CONST_ENV_SP;
+            } else {
+                $this->media = CONST_ENV_PC;
+            }
+        }
 
-//        $this->pankuzu = new Func_Pankuzu();
+        $this->pankuzu = new Func_Pankuzu();
 
         parent::before();
 
@@ -127,8 +129,10 @@ class Controller_User_Base extends Controller_Hybrid
         $this->add_js("user/common/common.js");
     }
 
+
     public function after($response)
     {
+
         // set header/footer
         $this->template->set('header', $this->header ?? '');
         $this->template->set('footer', $this->footer ?? '');
@@ -155,22 +159,27 @@ class Controller_User_Base extends Controller_Hybrid
         $this->template->set('canonical', $this->meta['canonical']);
         $this->template->set('refresh', $this->meta['refresh']);
         $this->template->set_global('h1', $this->meta['h1']);
+
         // GTM（404 is hide）
         $this->template->set_safe('disp_gtm', $this->disp_gtm);
 
-//        $pankuzu = $this->pankuzu->getPankuzuList();
-//        $this->template->set_global('pankuzu', $pankuzu);
+        $pankuzu = $this->pankuzu->getPankuzuList();
+        $this->template->set_global('pankuzu', $pankuzu);
 
         // JSON-LD
-//        $this->json_ld['pankuzu'] = $this->pankuzu->getPankuzuList();
-//        $this->template->json_ld  = View::forge("user/common/jsonld/pankuzu", ['json_ld' => $this->json_ld['pankuzu']], false);
+        $this->json_ld['pankuzu'] = $this->pankuzu->getPankuzuList();
+        $this->template->json_ld  = View::forge("user/common/jsonld/pankuzu", ['json_ld' => $this->json_ld['pankuzu']], false);
 
-//        $datalayer_obj = new Service_User_Datalayer_Detail();
-//        $this->template->set_global('datalayer_mail_to', $datalayer_obj->create_onmousedown_mailto());
+        $datalayer_obj = new Service_User_Datalayer_Detail();
+        $this->template->set_global('datalayer_mail_to', $datalayer_obj->create_onmousedown_mailto());
 
         return parent::after($response ?? Response::forge($this->template, $this->page_response_status));
     }
 
+    /**
+     * URLチェック
+     * @return void
+     */
     private function handle_invalid_url(): void
     {
         $url_str = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -200,5 +209,4 @@ class Controller_User_Base extends Controller_Hybrid
             Response::redirect($redirect_url, 'location', 301);
         }
     }
-
 }

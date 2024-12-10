@@ -30,20 +30,13 @@ class Model_Qzin_Area_Main extends \Orm\Model
     private static $cache = null;
 
     // area_class
-    const AREA_CLASS_MASTER_AREA = 0; // 大エリア（東北・関東など）
-    const AREA_CLASS_SMALL_AREA = 1; // 小エリア（新宿・渋谷など）
-    const AREA_CLASS_PREF = 2; // 都道府県（東京・沖縄など）
-    const AREA_CLASS_CITY = 3; // 特殊小エリア (小エリア名古屋)
-
-    // group_area_id
-    const GROUP_AREA_ID_NONE = 0; // グループエリアなし
-
-    // master_area_id（AREA_CLASS_MASTER_AREA）
-    const MASTER_AREA_ID_CHUGOKU_SHIKOK = 7000; // 中国・四国
-
-    // pref_id (AREA_CLASS_PREF)
+    const AREA_CLASS_MASTER_AREA = 0;
+    const AREA_CLASS_SMALL_AREA = 1;
+    const AREA_CLASS_PREF = 2;
+    const AREA_CLASS_CITY = 3;
+    const GROUP_AREA_ID_NONE = 0;
+    const MASTER_AREA_ID_CHUGOKU_SHIKOK = 7000;
     const PREF_ID_HIROSHIMA = 31;
-
     const MASTER_AREA_SORT = [
         'kanto',                //関東
         'kansai',               //関西
@@ -57,32 +50,21 @@ class Model_Qzin_Area_Main extends \Orm\Model
 
     public static function get_area_by_class(int $area_class = 0): array
     {
-        $params = [];
-
-        $sql  = "SELECT * \n";
-        $sql .= "FROM " . Model_Qzin_Area_Main::table() . " s \n";
-        $sql .= "WHERE s.area_class = :area_class \n";
-        $sql .= "ORDER BY s.area_sort \n";
-
-        $params['area_class'] = $area_class;
-
-        return DB::query($sql, DB::SELECT)->parameters($params)->execute()->as_array();
+        return DB::select('*')->from('area_mains')
+                                    ->where('area_class', $area_class)
+                                    ->order_by('area_sort', 'ASC')
+                                    ->execute()
+                                    ->as_array();
     }
 
     public static function get_area_by_class_and_master_area_id(int $area_class, int $master_area_id): array
     {
-        $params = [];
-
-        $sql  = "SELECT * \n";
-        $sql .= "FROM " . Model_Qzin_Area_Main::table() . " s \n";
-        $sql .= "WHERE s.area_class = :area_class \n";
-        $sql .= "AND s.master_area_id = :master_area_id  \n";
-        $sql .= "ORDER BY s.area_id \n";
-
-        $params['area_class'] = $area_class;
-        $params['master_area_id'] = $master_area_id;
-
-        return DB::query($sql, DB::SELECT)->parameters($params)->execute()->as_array();
+        return DB::select('*')->from('area_mains')
+                                    ->where('area_class', $area_class)
+                                    ->where('master_area_id', $master_area_id)
+                                    ->order_by('area_id', 'ASC')
+                                    ->execute()
+                                    ->as_array();
     }
 
     /**

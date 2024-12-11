@@ -93,7 +93,7 @@
                 <?php echo Asset::img('user/top/ico_search.svg', ['alt' => '', 'class' => 'ico-search']) ?>
                 <h2 class="line-pink">エリアからメンズエステ求人を探す</h2>
             </div>
-<!--            --><?php //echo View::forge('user/parts/search_area', ['areas' => $areas]); ?>
+            <?php echo View::forge('user/parts/search_area', ['areas' => $areas]); ?>
         </div>
     </section>
 </div>

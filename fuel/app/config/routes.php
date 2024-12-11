@@ -1,4 +1,6 @@
 <?php
+\Package::load('orm');
+
 if (!isset($_SERVER["HTTP_HOST"])) {
     $_SERVER["HTTP_HOST"] = '';
 }
@@ -13,6 +15,7 @@ if (isset($_SERVER["REQUEST_URI"])) {
         $seg = $uri[1];
     }
 }
+
 if ($seg == 'admin') {
     $arr = [
         'admin/post(/:num)?' => 'admin/post/index',
@@ -41,10 +44,11 @@ if ($seg == 'admin') {
         'admin/logout' => 'admin/login/logout',
     ];
 } else {
-//    $area_id	= "(?P<area_id>[0-9][0-9][0-9][0-9])";
-//    $s_shop_id	= "(?P<s_shop_id>[A-Za-z0-9][A-Za-z0-9]*)"; //shop_mains.id
-//    $prefs		= Arr::pluck(Model_Qzin_Area_Main::get_pref_names(), 'area_name2');
-//    $prefarea	= '(?P<prefarea>(' . implode("|", $prefs) . '))';
+
+    $area_id	= "(?P<area_id>[0-9][0-9][0-9][0-9])";
+    $s_shop_id	= "(?P<s_shop_id>[A-Za-z0-9][A-Za-z0-9]*)"; //shop_mains.id
+    $prefs		= Arr::pluck(Model_Qzin_Area_Main::get_pref_names(), 'area_name2');
+    $prefarea	= '(?P<prefarea>(' . implode("|", $prefs) . '))';
 
     $arr = [
         '_404_' 											=> 'user/404',
@@ -62,12 +66,12 @@ if ($seg == 'admin') {
         'user/ajax/tel_count_up'							=> 'user/ajax/tel_count_up',
         'user/ajax/line_count_up'							=> 'user/ajax/line_count_up',
 
-        ":prefarea" 										=> 'user/search/prefarea/index',
-//        "{$prefarea}/load_more" 							=> 'user/ajax/load_more_by_prefarea',
-//        "{$prefarea}/a_{$area_id}" 							=> 'user/search/area/index',
-//        "{$prefarea}/a_{$area_id}/load_more" 				=> 'user/ajax/load_more_by_area',
-//
-//        "{$prefarea}/a_{$area_id}/recruit/s_{$s_shop_id}" 	=> 'user/search/detail/index',
+        "{$prefarea}" 										=> 'user/search/prefarea/index',
+        "{$prefarea}/load_more" 							=> 'user/ajax/load_more_by_prefarea',
+        "{$prefarea}/a_{$area_id}" 							=> 'user/search/area/index',
+        "{$prefarea}/a_{$area_id}/load_more" 				=> 'user/ajax/load_more_by_area',
+
+        "{$prefarea}/a_{$area_id}/recruit/s_{$s_shop_id}" 	=> 'user/search/detail/index',
     ];
 }
 return $arr;

@@ -474,7 +474,7 @@ return array(
 
          //Load các class
          'classes' => [
-             'Service\\Export',  // Đảm bảo rằng class Export luôn được load
+             'Service\\Export',
          ],
 
 		/**

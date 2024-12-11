@@ -122,9 +122,9 @@
 								</div>
 							<?php } ?>
 						</div>
-						<div class="btn-detail-box">
-							<a href="<?php echo Uri::base() . "{$prefarea['area_name2']}/a_{$shop['group_area_id']}/recruit/s_{$shop['shop_id']}" ?>/" class="btn-detail">詳細を見る</a>
-						</div>
+                        <div class="btn-detail-box">
+                            <a href="<?php echo Uri::base() . "{$prefarea['area_name2']}/a_{$shop['group_area_id']}/recruit/s_{$shop['shop_id']}" ?>/" class="btn-detail">詳細を見る</a>
+                        </div>
 					</li>
 
 				<?php } ?>

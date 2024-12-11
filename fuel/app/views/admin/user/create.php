@@ -94,7 +94,7 @@
 
     <h1>Create New User</h1>
 
-    <?php echo Form::open(array('action' => 'admin/user/create')); ?>
+    <?php echo Form::open(array('action' => 'admin/user/create', 'enctype' => 'multipart/form-data', 'method' => 'post')); ?>
 
     <div class="form-group">
         <?php echo Form::label('Name', 'name', array('id' => 'name')) ?>
@@ -116,24 +116,13 @@
         <?php echo Form::password('password', '', array('id' => 'password', 'class' => 'input-field', 'placeholder' => 'Enter password user')); ?>
     </div>
 
-<!--    <div class="form-group">-->
-<!--        <label for="role">Role:</label>-->
-<!--        --><?php
-//        // Danh sách các lựa chọn cho dropdown
-//        $options = array(
-//            'admin' => 'Admin',
-//            'editor' => 'Editor',
-//            'viewer' => 'Viewer'
-//        );
-//
-//        // Tạo form select
-//        echo Form::select('role', '', $options, array('id' => 'role', 'class' => 'input-field'));
-//        ?>
-<!--    </div>-->
+    <div class="form-group">
+        <label for="image">Avatar User</label>
+        <?php echo Form::file('image', array('id' => 'image', 'class' => 'input-field')); ?>
+    </div>
 
     <div class="form-group">
         <button type="submit" class="submit-btn">Create User</button>
     </div>
-
     <?php echo Form::close(); ?>
 </div>

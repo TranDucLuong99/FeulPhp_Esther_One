@@ -46,12 +46,17 @@ class Controller_Admin_User extends Controller_Admin_Base
             $validation->add_field('name', 'Name', 'required');
             $validation->add_field('email', 'Email', 'required');
             $validation->add_field('password', 'Password', 'required|min_length[6]');
+
             // Kiểm tra dữ liệu từ form
             if ($validation->run()) {
-                $name = Input::post('name');
-                $username = Input::post('username');
-                $password = Input::post('password');
-                $email = Input::post('email');
+                $name       = Input::post('name');
+                $username   = Input::post('username');
+                $password   = Input::post('password');
+                $email      = Input::post('email');
+
+                $upload = new Service_Upload();
+
+                $upload->post_upload_image();
 
                 try {
                     Model_User::insert_data_user($name, $username, $password, $email);

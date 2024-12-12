@@ -18,12 +18,12 @@
 							</div>
 						</a>
 						<a href="<?php echo Uri::base() . "{$prefarea['area_name2']}/a_{$shop['group_area_id']}/recruit/s_{$shop['shop_id']}" ?>/">
-<!--							--><?php //if (isset($shop['img_name'])) { ?>
-<!--								<img src="--><?php //echo $env_img_url ?><!----><?php //echo $shop['img_nameimg_name'] ?><!--" alt="--><?php //echo htmlentities($shop['shop_name_estheone']) ?><!--の求人画像" class="job-img">-->
-<!--							--><?php //} else {
-//								echo Asset::img('user/common/noimage/img_large_pc.png', ['alt' => htmlentities($shop['shop_name_estheone']) . 'の求人画像', 'class' => 'job-img']);
-//							} ?>
-                            <img src="https://d2mo334kw8autn.cloudfront.net/shop_img/34257.jpg" alt="">
+							<?php if (isset($shop['img_name'])) { ?>
+								<img src="<?php echo $env_img_url ?><?php echo $shop['img_name'] ?>" alt="<?php echo htmlentities($shop['shop_name_estheone']) ?>の求人画像" class="job-img">
+							<?php } else {
+								echo Asset::img('user/common/noimage/img_large_pc.png', ['alt' => htmlentities($shop['shop_name_estheone']) . 'の求人画像', 'class' => 'job-img']);
+							} ?>
+<!--                            <img src="https://d2mo334kw8autn.cloudfront.net/shop_img/34257.jpg" alt="">-->
 						</a>
 						<a href="<?php echo Uri::base() . "{$prefarea['area_name2']}/a_{$shop['group_area_id']}/recruit/s_{$shop['shop_id']}" ?>/">
 							<h2 class="store-name">

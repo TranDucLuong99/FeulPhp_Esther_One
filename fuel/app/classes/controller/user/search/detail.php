@@ -23,7 +23,6 @@ class Controller_User_Search_Detail extends Controller_User_Search_Base
 
 	public function action_index()
 	{
-        dd(1);
 		$service_shop = new Service_User_Shop();
 		$this->datalayer_obj = new Service_User_Datalayer_Detail();
 		$id = $this->param('s_shop_id', null);

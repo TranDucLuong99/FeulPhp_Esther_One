@@ -36,6 +36,7 @@ class Controller_User_Search_Prefarea extends Controller_User_Search_Base
 		$service_shop = new Service_User_Shop();
 
 		$total_shop_mains_record = $service_shop->get_total_shop_mains_record(null, $this->prefarea['area_id']);
+
 		if ($total_shop_mains_record == 0) {
 			$this->add_css("user/no_result.css");
 
@@ -49,7 +50,9 @@ class Controller_User_Search_Prefarea extends Controller_User_Search_Base
 		}
 
 		$shops_autonum = $service_shop->get_shop_mains_autonum(null, $this->prefarea['area_id']);
+
 		$init_shops_autonum = array_slice($shops_autonum, $this::OFFSET, $this::LIMIT, true);
+
 		$remaining_shops_autonum = array_slice($shops_autonum, $this::LIMIT, null, true);
 
 		$shops = $service_shop->get_shops_by_autonum($init_shops_autonum);

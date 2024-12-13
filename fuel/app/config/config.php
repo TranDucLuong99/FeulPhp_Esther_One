@@ -470,6 +470,7 @@ return array(
 		 'packages' => array(
 		 	 'orm',
              'auth',
+             'email',
 		 ),
 
          //Load các class

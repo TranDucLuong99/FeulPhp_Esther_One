@@ -167,4 +167,11 @@ class Controller_Admin_Post extends Controller_Admin_Base
         Response::redirect('admin/post');
     }
 
+    public function action_send()
+    {
+        $email = new Service_Sendmail();
+        $email->send_email_to_user();
+        dd(1);
+    }
+
 }

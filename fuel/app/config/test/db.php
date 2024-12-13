@@ -25,7 +25,7 @@
  return array(
      'default' => array(
          'connection' => array(
-             'dsn'      => 'mysql:host=mysql;port=3306;dbname=fuelphp_db_test',
+             'dsn'      => 'mysql:host=mysql;port=3306;dbname=fuelphp_test_db',
              'username' => 'fuelphp',
              'password' => '123456',
          ),

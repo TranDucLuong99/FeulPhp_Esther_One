@@ -42,9 +42,9 @@ if ($seg == 'admin') {
         'admin/login' => 'admin/login/index',
         'admin/register' => 'admin/register/index',
         'admin/logout' => 'admin/login/logout',
+        'admin/send' => 'admin/post/send',
     ];
 } else {
-
     $area_id	= "(?P<area_id>[0-9][0-9][0-9][0-9])";
     $s_shop_id	= "(?P<s_shop_id>[A-Za-z0-9][A-Za-z0-9]*)"; //shop_mains.id
     $prefs		= Arr::pluck(Model_Qzin_Area_Main::get_pref_names(), 'area_name2');

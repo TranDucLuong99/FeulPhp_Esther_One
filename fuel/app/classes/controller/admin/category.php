@@ -14,7 +14,7 @@ class Controller_Admin_Category extends Controller_Admin_Base
             $config['uri_segment'] = 3;
         */
         $config = [
-            'pagination_url' => 'http://localhost:8000/admin/category/',
+            'pagination_url' => Uri::base() .  '/admin/category/',
             'total_items'    => Model_Category::count(),
             'per_page'       => 5,
         ];

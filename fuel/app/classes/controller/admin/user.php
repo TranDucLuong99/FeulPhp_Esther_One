@@ -15,7 +15,7 @@ class Controller_Admin_User extends Controller_Admin_Base
         }
 
         $config = [
-            'pagination_url' => 'http://localhost:8000/admin/user/',
+            'pagination_url' => Uri::base() . '/admin/user/',
             'total_items'    => $users->count(),
             'per_page'       => 5,
         ];

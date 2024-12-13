@@ -22,12 +22,12 @@
  *
  */
 
-return array(
-	'default' => array(
-		'connection' => array(
-			'dsn'      => 'mysql:host=localhost;dbname=fuel_test',
-			'username' => 'fuel_app',
-			'password' => 'super_secret_password',
-		),
-	),
-);
+ return array(
+     'default' => array(
+         'connection' => array(
+             'dsn'      => 'mysql:host=mysql;port=3306;dbname=fuelphp_db_test',
+             'username' => 'fuelphp',
+             'password' => '123456',
+         ),
+     ),
+ );

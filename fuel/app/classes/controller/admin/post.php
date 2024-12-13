@@ -6,7 +6,7 @@ class Controller_Admin_Post extends Controller_Admin_Base
 	{
         // Load posts from database
         $config = array(
-            'pagination_url' => 'http://localhost:8000/admin/post/',
+            'pagination_url' => Uri::base() . '/admin/post/',
             'total_items'    => Model_Post::count(),
             'per_page'       => 5,
         );

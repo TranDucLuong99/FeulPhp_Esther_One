@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 name: fuelphp-training
 
@@ -28,6 +28,17 @@ services:
       - "3309:3306"
     volumes:
       - db_data:/var/lib/mysql
-
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: fuelphp-phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - MYSQL_ROOT_USER=fuelphp
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
 volumes:
   db_data:

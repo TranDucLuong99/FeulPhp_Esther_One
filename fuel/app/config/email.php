@@ -78,7 +78,7 @@ return array(
          * Default sender details
          */
         'from' => array(
-            'email' => 'tranducluong8899@gmail.com',
+            'email' => 'tranducluong8899999@gmail.com',
             'name'  => 'tranducluong',
         ),
 
@@ -126,8 +126,8 @@ return array(
         'smtp' => array(
             'host'     => 'sandbox.smtp.mailtrap.io',
             'port'     => 587,
-            'username' => 'f003e85694dd54',
-            'password' => 'f2c5fcc2bb0240',
+            'username' => '40f1bd6313b46e',
+            'password' => 'f8d1d9ff4f7257',
             'timeout'  => 5,
             'starttls' => true,
             'options'  => array(
